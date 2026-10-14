@@ -39,7 +39,7 @@ Cloudflare 默认的 Email Address Obfuscation 会在返回的页面中注入邮
 - 教程需根据当前产品行为核实步骤、数值和限制。页面日期与 Article schema 中的日期同步更新；变更中英文页面时，同时更新对应语言路径。
 - 搜索平台的站点验证、站点地图提交和收录状态需在平台中单独操作与核验；仅把带日期的平台返回状态记录在下文，不据此推断未检查页面的收录情况。
 
-截至 2026 年 10 月 14 日的平台记录：Google Search Console 的 `sc-domain:hugehard.app` 已通过 DNS 验证；当前线上站点地图已提交，首次处理状态显示无法抓取；首页网址检查显示已收录，实时测试显示可编入索引。Bing Webmaster Tools 的域名资源已通过 DNS 验证，站点地图状态为 `Processing`。这些状态只反映此前已发布页面；本次源码更新发布后需重新提交站点地图并复查，不代表所有新列出的规范 URL 均已收录。
+截至 2026 年 10 月 14 日的平台记录：[Google Search Console 属性](https://search.google.com/search-console?resource_id=sc-domain%3Ahugehard.app) `sc-domain:hugehard.app` 已通过 DNS 验证，站点地图重新提交后状态为 `Success`，报告发现 18 个 URL。发现 URL 不代表全部已收录；首页网址检查显示已收录，实时测试显示可编入索引。[Bing Webmaster Tools 站点地图](https://www.bing.com/webmasters/sitemaps?siteUrl=https%3A%2F%2Fhugehard.app%2F) 的 `https://hugehard.app/` 资源已通过 DNS 验证，站点地图状态仍为 `Processing`。发布新页面后重新提交并分别核对收录状态。
 
 本地运行检查脚本：
 
