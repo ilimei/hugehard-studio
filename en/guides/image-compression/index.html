@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f0e7">
+  <meta name="description" content="Set an image target in This Pic Can Change. Learn how JPEG/HEIC quality search, lossless PNG, GIF timing, and actual result checks work.">
+  <link rel="canonical" href="https://hugehard.app/en/guides/image-compression/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://hugehard.app/guides/image-compression/">
+  <link rel="alternate" hreflang="en" href="https://hugehard.app/en/guides/image-compression/">
+  <link rel="alternate" hreflang="x-default" href="https://hugehard.app/guides/image-compression/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="HugeHard Studio">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="How to Compress an Image to a Target Size | HugeHard Studio">
+  <meta property="og:description" content="Choose an output format and target, understand JPEG/HEIC, PNG, and GIF limits, and check the actual file. The app’s Chinese name is 这图能改.">
+  <meta property="og:url" content="https://hugehard.app/en/guides/image-compression/">
+  <meta property="og:image" content="https://hugehard.app/assets/app-icon.png">
+  <meta property="og:image:alt" content="This Pic Can Change app icon">
+  <meta property="article:published_time" content="2026-10-14">
+  <meta property="article:modified_time" content="2026-10-14">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Compress an Image to a Target Size | HugeHard Studio">
+  <meta name="twitter:description" content="Choose an output format and target, understand JPEG/HEIC, PNG, and GIF limits, and check the actual file.">
+  <meta name="twitter:image" content="https://hugehard.app/assets/app-icon.png">
+  <meta name="twitter:image:alt" content="This Pic Can Change app icon">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <title>How to Compress an Image to a Target Size | HugeHard Studio</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "How to Compress an Image to a Target Size",
+        "description": "Set an image target in This Pic Can Change and understand JPEG/HEIC quality search, lossless PNG, GIF timing, and result checks.",
+        "image": "https://hugehard.app/assets/app-icon.png",
+        "datePublished": "2026-10-14",
+        "dateModified": "2026-10-14",
+        "author": { "@type": "Organization", "name": "HugeHard Studio", "url": "https://hugehard.app/" },
+        "publisher": { "@type": "Organization", "name": "HugeHard Studio", "url": "https://hugehard.app/" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://hugehard.app/en/guides/image-compression/" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hugehard.app/en/" },
+          { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://hugehard.app/en/guides/" },
+          { "@type": "ListItem", "position": 3, "name": "Image compression", "item": "https://hugehard.app/en/guides/image-compression/" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/en/" aria-label="HugeHard Studio home"><img src="/assets/app-icon.png" alt=""><span>HugeHard Studio<small>Practical guides</small></span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/">Studio</a><a href="/en/apps/this-pic-can-change/">This Pic Can Change</a><a href="/en/guides/">Guides</a>
+        <a href="/en/apps/this-pic-can-change/support.html">Support</a>
+        <a class="language-link" href="/guides/image-compression/" lang="zh-CN">中文</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container document-page">
+    <article class="prose">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/en/">Home</a></li><li><a href="/en/guides/">Guides</a></li><li aria-current="page">Image compression</li></ol></nav>
+      <p class="eyebrow">Image processing</p>
+      <h1>How to compress an image to a target size</h1>
+      <p class="article-meta">Written and maintained by HugeHard Studio · Updated 14 October 2026</p>
+      <p class="lead">A target is a value to try, not a guarantee for every format or source image. After compression, use the result screen’s actual file size, format, and pixel dimensions as your reference.</p>
+
+      <h2>Steps</h2>
+      <ol class="guide-steps">
+        <li>In This Pic Can Change, open Tools (“工具”) → Image Compression (“图片压缩”), then import an image from Photos or Files. Processing happens on device and does not overwrite the original.</li>
+        <li>Set a target size and choose an output format. The target is adjusted in whole KB, or in whole bytes when the source image is smaller than 1 KB; its range is limited by the imported file’s size. Turn on “Keep original size” (“保留原尺寸”) to preserve pixel dimensions. If it is off, you can choose output dimensions.</li>
+        <li>Read the format-specific note. JPEG and HEIC search encoding quality to try to keep better quality within the target byte count. This does not guarantee the target will be met. When a transparent image is converted to JPEG, transparent areas are filled with white.</li>
+        <li>For a GIF, keep the animated format. All frames, frame delays, and the loop count are preserved. If you enable target-size compression and the target is still missed, turning off “Keep original size” lets the app try reducing the dimensions while preserving animation timing.</li>
+        <li>PNG uses lossless encoding. It does not reduce image quality to make the file smaller, so the output may remain above the target.</li>
+        <li>Check the result preview for actual file size and pixel dimensions, then save to Photos or share. If the target is missed, the result screen shows the actual size and an explanation.</li>
+      </ol>
+
+      <aside class="guide-callout">
+        <p><strong>Limits to keep in mind</strong></p>
+        <p>Lossless PNG output, keeping original dimensions, and the number and complexity of GIF frames affect file size. Image processing accepts source images up to 80 megapixels, with an output long-edge limit of 8,192 pixels; the app reports files outside its supported range. Do not infer the output size from the target field alone.</p>
+      </aside>
+
+      <h2>Check the file before sharing</h2>
+      <p>Confirm the required format, pixel dimensions, and actual byte size. If an email or website has a file limit, check the exported file itself. If PNG or a full-size GIF is over the target, consider allowing a smaller output dimension or choosing a format that suits the material and use. Compression writes a new file and leaves the source unchanged.</p>
+      <p>Read the <a href="/en/apps/this-pic-can-change/">product overview</a> or <a href="/en/apps/this-pic-can-change/support.html">support page</a>, or continue with the <a href="/en/guides/video-to-live-photo/">video-to-Live-Photo guide</a> and <a href="/en/guides/screenshot-delivery/">screenshot-delivery guide</a>.</p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner"><span class="footer-brand">HugeHard Studio · This Pic Can Change</span><nav class="footer-links" aria-label="Footer navigation"><a href="/en/">Studio home</a><a href="/en/apps/this-pic-can-change/">Product</a><a href="/en/guides/">Guides</a><a href="mailto:hugehardzhang@gmail.com">Contact</a></nav></div>
+  </footer>
+</body>
+</html>

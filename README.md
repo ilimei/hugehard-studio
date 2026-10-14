@@ -27,6 +27,28 @@ GitHub Pages 操作细节与 DNS 目标可能更新，请以 [发布源设置说
 
 Cloudflare 默认的 Email Address Obfuscation 会在返回的页面中注入邮箱解码脚本。这是邮箱显示保护，不是站点跟踪脚本。`hugehardzhang@gmail.com` 是有意公开的业务联系邮箱，保持当前 Cloudflare 设置即可。
 
+## SEO 与语言版本维护
+
+网站提供简体中文和英文两套页面。新增或修改成对页面时，按相同内容路径互链：中文在 `/` 与 `/apps/...`，英文在 `/en/` 与 `/en/apps/...`；教程对应放在 `/guides/` 和 `/en/guides/`。
+
+- 每个可索引页面设置唯一且符合正文的 `title`、`description`、Open Graph 和 Twitter 标题、描述及图标；`og:url` 与自 canonical 一致。
+- 每个中英文页面都设置指向自身的 canonical、对应语言的 `zh-Hans` 与 `en` alternate，以及指向中文对应页的 `x-default`。站内导航使用规范目录 URL 或实际 `.html` 文件地址，不链接 `index.html`。
+- `sitemap.xml` 只列出 canonical 的可索引页面；不要加入 `404.html`。`robots.txt` 保持正常开放抓取。
+- 结构化数据必须与可见文案一致：首页维护 `Organization` 与 `WebSite`，产品页使用 `WebPage`，并用共享 `Thing` 描述中文产品名与英文站点名称，教程维护 `Article` 与 `BreadcrumbList`。教程作者使用 HugeHard Studio，不添加虚构个人作者、价格、评分、下载链接或未经核实的统计。
+- 目前产品准备上线，没有真实商店价格或应用评价，因此不标记 `SoftwareApplication` 富结果。Google 的该类富结果要求 `offers.price` 和 `rating` 或 `review`；等真实商品价格与评价可核实后，再按[官方规范](https://developers.google.com/search/docs/appearance/structured-data/software-app)评估是否添加。
+- 教程需根据当前产品行为核实步骤、数值和限制。页面日期与 Article schema 中的日期同步更新；变更中英文页面时，同时更新对应语言路径。
+- 搜索平台的站点验证、站点地图提交和收录状态需在平台中单独操作与核验；仅把带日期的平台返回状态记录在下文，不据此推断未检查页面的收录情况。
+
+截至 2026 年 10 月 14 日的平台记录：Google Search Console 的 `sc-domain:hugehard.app` 已通过 DNS 验证；当前线上站点地图已提交，首次处理状态显示无法抓取；首页网址检查显示已收录，实时测试显示可编入索引。Bing Webmaster Tools 的域名资源已通过 DNS 验证，站点地图状态为 `Processing`。这些状态只反映此前已发布页面；本次源码更新发布后需重新提交站点地图并复查，不代表所有新列出的规范 URL 均已收录。
+
+本地运行检查脚本：
+
+```sh
+python3 validate-site.py
+```
+
+脚本检查 canonical、hreflang 配对、站点地图、站内链接和 JSON-LD 语言与页面结构。
+
 ## 本地预览
 
 在网站仓库根目录运行 Python 自带的静态文件服务器：
@@ -35,13 +57,16 @@ Cloudflare 默认的 Email Address Obfuscation 会在返回的页面中注入邮
 python3 -m http.server 8000
 ```
 
-然后在浏览器打开 `http://localhost:8000/`。检查首页、`/privacy.html`、`/apps/this-pic-can-change/` 及其 `privacy.html` 和 `support.html` 页面，并试用键盘 Tab 导航与窄屏视图。按 Ctrl-C 关闭本地服务器。
+然后在浏览器打开 `http://localhost:8000/`。检查中文和 `/en/` 首页、产品页、隐私/支持页、两种语言的指南索引与文章，以及 404 页面；试用键盘 Tab 导航与窄屏视图。再运行 `python3 validate-site.py`。按 Ctrl-C 关闭本地服务器。
 
 ## 页面与资源
 
 - `index.html`：工作室首页。
 - `apps/this-pic-can-change/`：产品介绍、隐私政策和使用支持。
+- `en/` 与 `en/apps/this-pic-can-change/`：English 网站、产品、隐私与支持镜像。
+- `guides/`、`en/guides/`：中英指南索引及图片压缩、视频转实况、截图交付教程。
 - `privacy.html`：本网站的数据处理，以及 Cloudflare 代理和 GitHub Pages 托管日志。
 - `404.html`：站内未找到页面时显示。
 - `assets/styles.css`：共享样式。
+- `validate-site.py`：站点路由、SEO 元数据和结构化数据检查。
 - `robots.txt`、`sitemap.xml`、`favicon.svg`、`.nojekyll`、`CNAME`：发布元数据与站点图标。

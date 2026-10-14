@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f0e7">
+  <meta name="description" content="This Pic Can Change privacy policy: on-device processing, optional AI requests, API keys, widgets, purchases, and data deletion.">
+  <link rel="canonical" href="https://hugehard.app/en/apps/this-pic-can-change/privacy.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://hugehard.app/apps/this-pic-can-change/privacy.html">
+  <link rel="alternate" hreflang="en" href="https://hugehard.app/en/apps/this-pic-can-change/privacy.html">
+  <link rel="alternate" hreflang="x-default" href="https://hugehard.app/apps/this-pic-can-change/privacy.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HugeHard Studio">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="This Pic Can Change | Privacy Policy">
+  <meta property="og:description" content="How the app handles on-device media, optional AI requests, API keys, widgets, purchases, and deletion. The app’s Chinese name is 这图能改.">
+  <meta property="og:url" content="https://hugehard.app/en/apps/this-pic-can-change/privacy.html">
+  <meta property="og:image" content="https://hugehard.app/assets/app-icon.png">
+  <meta property="og:image:alt" content="This Pic Can Change app icon">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="This Pic Can Change | Privacy Policy">
+  <meta name="twitter:description" content="How the app handles on-device media, optional AI requests, API keys, widgets, purchases, and deletion. The app’s Chinese name is 这图能改.">
+  <meta name="twitter:image" content="https://hugehard.app/assets/app-icon.png">
+  <meta name="twitter:image:alt" content="This Pic Can Change app icon">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <title>This Pic Can Change | Privacy Policy</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/en/" aria-label="HugeHard Studio home">
+        <img src="/assets/app-icon.png" alt="">
+        <span>HugeHard Studio<small>This Pic Can Change privacy policy</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/">Studio</a>
+        <a href="/en/apps/this-pic-can-change/">Product</a>
+        <a href="/en/guides/">Guides</a>
+        <a href="/en/apps/this-pic-can-change/support.html">Support</a>
+        <a href="/en/apps/this-pic-can-change/privacy.html" aria-current="page">App privacy</a>
+        <a class="language-link" href="/apps/this-pic-can-change/privacy.html" lang="zh-CN">中文</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container document-page">
+    <nav class="document-nav" aria-label="Product pages">
+      <a href="/en/apps/this-pic-can-change/">Product</a>
+      <a href="/en/apps/this-pic-can-change/privacy.html">Privacy policy</a>
+      <a href="/en/apps/this-pic-can-change/support.html">Support</a>
+    </nav>
+    <article class="prose">
+      <h1>This Pic Can Change · Privacy Policy</h1>
+      <p>Updated: 14 October 2026. Applies to app version 1.0. The app’s Chinese name is 这图能改.</p>
+
+      <h2>Information we process</h2>
+      <p>The app does not require you to register a developer account. Its seven on-device tools do not upload media to developer servers. Photos and files you select are cached on your device for processing; local Recent items, drafts, and widget data are also stored on the device. Optional AI data flows are described below.</p>
+
+      <h2>What an optional AI service receives</h2>
+      <p>AI image generation and image editing are optional online features. Choose a feature in Tools (“工具”) → AI Creation (“AI 创作”), then configure a provider, protocol, model, Base URL, and your own API key in Settings (“设置”) → AI Service Configuration (“AI 服务配置”). AI requests go from your device directly to that configured address, not through this app’s developer servers. AI requests do not use the app’s weekly free processing allowance. A provider may charge your account under its own pricing; cancelling your wait does not necessarily stop a request already submitted from being processed or billed.</p>
+      <ul>
+        <li><strong>Connection check:</strong> When you choose “Check connection and fetch models” (“检查连接并获取模型”), the app sends your API key to the configured address’s model-list endpoint. Protocols that support a model-list check do not send photos or prompts and do not request image generation. ZenMux’s Gemini Vertex protocol only checks the configuration on device and does not request a model list.</li>
+        <li><strong>AI image generation:</strong> After you confirm and start, the prompt, selected service and model, and generation options required by that protocol are sent to the receiving service.</li>
+        <li><strong>AI image editing:</strong> After you confirm and start, the reference image is first adjusted on device for orientation and format, then sent with your prompt to the receiving service.</li>
+      </ul>
+      <p>Before the first submission for a provider, protocol, full Base URL, and generation or editing mode, the app shows the receiving host and the content to be sent and waits for your confirmation. Confirmation is saved on device for the same configuration and mode. The app has no separate setting to clear accepted-destination records. Confirmation does not start a request; you must still start each AI task yourself. Changing the address, protocol, or mode requires confirmation again. To stop future submissions, do not start another AI task; you can also clear the local API key and revoke it with the provider. A connection check is a separate action, and its button explains where the API key will be sent.</p>
+
+      <h2>Providers control their own data handling</h2>
+      <p>OpenRouter, ZenMux, OpenAI, Google Gemini, or a custom service address may be operated by different organizations. A receiving service can see the information it needs to process the request and connection details. It may log API requests, prompts, images, account-linked information, network addresses, or generated results. Retention periods, abuse monitoring, model-improvement or training use, deletion methods, and processing locations depend on the provider and your account terms. This app does not control those practices and does not claim that every service promptly deletes requests or never uses them for training. Read the privacy policy and terms of the service you selected. Do not submit prompts or images if you do not accept its handling. You choose who operates a custom Base URL.</p>
+
+      <h2>Generated-image downloads and local recovery</h2>
+      <p>A service may return an image in its response or provide an HTTPS image link. In the latter case, the app separately downloads the generated image from that link’s host. This download request does not include your AI API key, cookies, or credential store; the link itself may contain temporary access parameters issued by the provider. To support a retry after an interrupted download, the app stores the link, creation details, and, when editing, the processed reference image on your device; these recovery files are excluded from system backups. A link may expire. Retrying from Pending Downloads (“待下载结果”) in Tools only downloads the existing result; it does not submit the generation request again. Removing a pending-download record deletes the local link and reference image but does not ask the provider to delete its copy.</p>
+
+      <h2>Local drafts, Recent items, and widgets</h2>
+      <p>Separate generation and editing drafts store prompts, style or edit direction, and the processed reference image on device. Restoring a draft does not send an AI request. You can choose “Clear draft” (“清除草稿”) on the corresponding creation page. AI results, prompts, model details, and required reference images are archived in Recent (“最近”) for later viewing and editing. Recent items keep up to 100 entries and up to 1 GB of archived output; older files may be removed when a limit is reached. Deleting a Recent item removes the corresponding app-managed local archive, but does not delete copies saved to Photos, shared with another app, or retained by a provider.</p>
+      <p>If an AI image was generated but could not be archived in Recent, it may appear in Tools as an Unsaved Image (“未保存图片”) for you to view or remove. The app keeps no more than three unarchived images on device. Images held only in memory are lost when the app exits. Choosing “Remove unsaved image” (“移除未保存图片”) deletes that temporary image and its local record.</p>
+      <p>Photo widgets and home screen games store your selected photo copies, ordering, and game progress in the local shared App Group directory for the app and widgets to read. These features do not upload photos or progress to developer servers. Ordinary image processing uses temporary caches, which the operating system may manage under its own rules. If processing fails, the app may record the time, processing stage, and system error details locally; details may include a related file path. Error logs are not automatically uploaded to the developer.</p>
+      <p>The weekly free-use record is stored in the device Keychain. iOS may retain a Keychain item after the app is uninstalled, so the record may remain after reinstalling. Pending-download recovery records, which may contain provider-signed image links, are excluded from system backups. Backup and restoration of other local data depend on system rules and device settings; we do not claim that every local file is excluded from backups.</p>
+
+      <h2>API keys, purchases, and diagnostics</h2>
+      <p>API keys are stored separately in the device Keychain for each provider and Base URL host, not in ordinary preferences. Keychain access is limited to this device. Connection checks and AI requests send the key to the receiving service currently configured. Clearing a local key does not revoke or delete it with the provider; visit the provider’s account settings to revoke it. Error diagnostics are stored locally and are not automatically uploaded. If you contact support and attach diagnostic information, the support mailbox receives and handles it. Do not email API keys, authorization headers, private photos, or prompts.</p>
+      <p>Purchases and purchase restoration for the permanent version are handled by Apple StoreKit/App Store. The app reads products and transaction entitlements verified by StoreKit. It does not receive card numbers or payment passwords and does not send purchase records to developer servers. Apple’s handling of store-account and transaction information is governed by Apple’s privacy policy.</p>
+
+      <h2>Advertising, analytics, and tracking</h2>
+      <p>The current code does not include advertising, third-party analytics, or cross-app or cross-site tracking SDKs. Media, drafts, Recent items, and error logs processed or stored on device are not uploaded to developer servers. If you choose to use AI, data is sent to the selected receiving service as described above.</p>
+
+      <h2>This website and GitHub Pages hosting</h2>
+      <p>This website is hosted by GitHub Pages. It has no contact form, advertising, third-party analytics, or tracking scripts, and embeds no external content. Cloudflare provides DNS resolution and website proxying; requests may pass through Cloudflare, which may process visitor IP addresses and request information under its privacy policy. If you choose to open the support email link and send a message, its contents are received by the support mailbox.</p>
+      <p>GitHub states that it records and retains visitor IP addresses for security when people visit GitHub Pages sites, whether or not they are signed in. Its general privacy statement also says it may record the referring site, visit time, pages viewed, and links clicked. Read the <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">GitHub Pages data collection notice</a>, <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>, and <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare Privacy Policy</a> for hosting and proxy data practices.</p>
+      <p>Hosting logs and proxy request information are handled by GitHub Pages and Cloudflare under their respective policies. They are website-service data, not app telemetry, and do not mean that the app sends your on-device media, drafts, or processing history to its developer.</p>
+
+      <h2>Deletion and contact</h2>
+      <p>You can clear generation or editing drafts, delete Recent items, remove pending-download records, and clear the current address’s API key under Settings → AI Service Configuration (“设置”→“AI 服务配置”). These actions manage data on the device in this app. They do not delete copies saved to Photos or shared with another app, and do not delete or revoke data or keys retained by a provider. Follow the provider’s account process for remote deletion or key revocation. To stop future AI requests, do not submit new tasks; you may also clear the local key and revoke it with the provider.</p>
+      <p>Support email: <a href="mailto:hugehardzhang@gmail.com">hugehardzhang@gmail.com</a></p>
+      <p>For support, share only information needed to investigate, such as device model, operating-system and app versions, tool used, service host, protocol, model, and the error message. Remove keys and other sensitive information first. We do not need the original photo, video, or full prompt to begin investigating.</p>
+      <p><a href="/en/apps/this-pic-can-change/support.html">Product support</a></p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">HugeHard Studio · This Pic Can Change</span>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/en/">Studio home</a>
+        <a href="/en/apps/this-pic-can-change/">Product</a>
+        <a href="/en/guides/">Guides</a>
+        <a href="/en/apps/this-pic-can-change/privacy.html">App privacy</a>
+        <a href="/en/apps/this-pic-can-change/support.html">Support</a>
+        <a href="mailto:hugehardzhang@gmail.com">Support email</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
