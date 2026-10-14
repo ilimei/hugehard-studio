@@ -1,6 +1,8 @@
 # How to turn an iPhone video into a Live Photo
 
-> Use This Pic Can Change (Chinese app name: “这图能改”) on iPhone or iPad to choose a video iOS can read, select up to three seconds, set a cover, quality, and sound, then save the paired result to Photos. The app supports iOS 17 and later, its interface is currently in Simplified Chinese, and its status is Preparing for launch.
+> Use This Pic Can Change (Chinese app name: “这图能改”) on iPhone or iPad to choose a video iOS can read, select up to three seconds, set a cover, quality, and sound, then save the paired result to Photos. Conversion runs on device. The app supports iOS 17 and later and its interface is Simplified Chinese. TestFlight 1.0 (2) external beta review is pending; screenshot delivery is in development and not included in this beta.
+
+[View TestFlight (review pending)](https://testflight.apple.com/join/GK8ht2vv). The public page is not accepting testers yet; joining opens after Apple Beta Review approval.
 
 ## Steps
 
@@ -18,7 +20,7 @@
 
 ## Video demonstration
 
-[Watch the real app-operation recording](https://hugehard.app/assets/video-to-live-photo-demo.mp4). It was captured in the project’s simulator promotion workflow with waiting portions edited out. The 19-second clip length is not a conversion-time measurement. The app interface may differ in the preparing-for-launch version.
+[Watch the real app-operation recording](https://hugehard.app/assets/video-to-live-photo-demo.mp4). It was captured in the project’s simulator promotion workflow with waiting portions edited out. The 19-second clip length is not a conversion-time measurement. The recording shows a simulator interface; the current beta may differ.
 
 ## Related pages
 

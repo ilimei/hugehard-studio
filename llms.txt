@@ -1,8 +1,8 @@
 # HugeHard Studio
 
-> HugeHard Studio is developing “这图能改”, an iOS 17+ photo and video utility. The English-language site calls the app “This Pic Can Change”; the app interface is currently in Simplified Chinese. Its status is Preparing for launch.
+> HugeHard Studio is developing “这图能改”, an iOS 17+ photo and video utility. The English-language site uses “This Pic Can Change” as its name; the app interface is Simplified Chinese. TestFlight 1.0 (2) external beta review is pending; the public page is not accepting testers yet. The current beta has six on-device media tools; screenshot delivery is in development and not included.
 
-The app provides on-device photo and video tools, screenshot delivery, photo and game widgets, and optional AI image generation and editing configured by the user. Ordinary image and video processing runs on device. Optional AI requests go to the configured provider, which may process the submitted content and charge the user. Support: hugehardzhang@gmail.com.
+The current TestFlight beta provides on-device photo and video tools, photo and game widgets, and optional AI image generation and editing configured by the user. Screenshot delivery is in development and not included in build 1.0 (2). Ordinary image and video processing runs on device. Optional AI requests go to the configured provider, which may process the submitted content and charge the user. Public TestFlight page: [review pending](https://testflight.apple.com/join/GK8ht2vv). Support: hugehardzhang@gmail.com.
 
 ## Clean Markdown
 

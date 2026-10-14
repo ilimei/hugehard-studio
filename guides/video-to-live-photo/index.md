@@ -1,6 +1,8 @@
 # iPhone 视频转 Live Photo（实况照片）怎么做
 
-> 使用《这图能改》在 iPhone 或 iPad 上选择系统可读取的视频，截取最多 3 秒，设置封面、画质和声音，然后保存到照片图库。App 当前支持 iOS 17 及以上、界面为简体中文，状态为准备上线。
+> 使用《这图能改》在 iPhone 或 iPad 上选择系统可读取的视频，截取最多 3 秒，设置封面、画质和声音，然后保存到照片图库。视频转换在设备本机完成；App 支持 iOS 17 及以上，界面为简体中文。TestFlight 1.0 (2) 外测等待 Apple Beta 审核；截图交付助手仍在开发中，未包含在本次 Beta。
+
+[查看 TestFlight（审核中）](https://testflight.apple.com/join/GK8ht2vv)。公开页面暂不接受新测试员；Apple Beta 审核通过后才开放加入。
 
 ## 操作要点
 

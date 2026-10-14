@@ -1,14 +1,14 @@
 # This Pic Can Change
 
-> This Pic Can Change is the English-language site name for “这图能改”. It is a photo and video utility for iPhone and iPad, supports iOS 17 and later, and currently has a Simplified Chinese app interface. Status: Preparing for launch.
+> “This Pic Can Change” is the English-language site name for “这图能改”. The app supports iOS 17 and later and its interface is Simplified Chinese. TestFlight 1.0 (2) external beta review is pending; the public page is not accepting testers yet and will open after Apple Beta Review approval.
 
 ## Product facts
 
-- Seven ordinary photo and video tools process media on device: video to Live Photo, video compression, video to GIF, image compression, format conversion, resizing, and screenshot delivery.
-- Screenshot Delivery can join 1–10 screenshots in order, set canvas dimensions, add manual redactions, review on-device OCR candidates, apply a purpose watermark, and export.
+- TestFlight 1.0 (2) includes six on-device media tools: video to Live Photo, video compression, video to GIF, image compression, format conversion, and resizing.
+- Screenshot delivery is in development and not included in the current beta. The development feature is planned to join 1–10 screenshots in order, set canvas dimensions, add manual redactions, review on-device OCR candidates, apply a purpose watermark, and export.
 - Home screen features include a photo widget and four games. Photos and game progress are stored in the device’s shared app directory.
 - Optional AI image generation and editing use a provider, protocol, model, Base URL, and API key configured by the user. Requests go from the device to the selected provider; that provider may process the submitted content and charge the user under its own terms.
-- The app’s status is Preparing for launch.
+- [View TestFlight (review pending)](https://testflight.apple.com/join/GK8ht2vv). The public page is not accepting testers yet; joining opens after Apple Beta Review approval.
 
 ## Video demonstration
 

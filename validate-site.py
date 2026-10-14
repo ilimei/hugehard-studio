@@ -16,6 +16,11 @@ from urllib.parse import unquote, urlparse
 ROOT = Path(__file__).resolve().parent
 BASE = "https://hugehard.app"
 ICON = f"{BASE}/assets/app-icon.png"
+TESTFLIGHT_URL = "https://testflight.apple.com/join/GK8ht2vv"
+TESTFLIGHT_HTML_ROUTES = {
+    "/apps/this-pic-can-change/", "/en/apps/this-pic-can-change/",
+    "/guides/video-to-live-photo/", "/en/guides/video-to-live-photo/",
+}
 
 # Canonical URL -> (file in this repository, document language)
 ROUTES = {
@@ -239,6 +244,8 @@ def markdown_links(path: Path, errors: list[str]) -> list[str]:
 
 
 def check_public_markdown_link(ref: str, source: Path, errors: list[str]) -> str | None:
+    if ref == TESTFLIGHT_URL:
+        return None
     parsed = urlparse(ref)
     if parsed.scheme != "https" or parsed.netloc != "hugehard.app":
         fail(errors, f"Markdown link must stay on the public site origin in {source.relative_to(ROOT)}: {ref}")
@@ -311,6 +318,8 @@ def main() -> int:
             parsed_ref = urlparse(ref)
             if not parsed_ref.scheme and not parsed_ref.netloc and Path(parsed_ref.path).name == "index.html":
                 fail(errors, f"Internal link uses non-canonical index.html on {route}: {ref}")
+        if route in TESTFLIGHT_HTML_ROUTES and parser.hrefs.count(TESTFLIGHT_URL) != 1:
+            fail(errors, f"Expected one verified TestFlight link on {route}")
 
     # Parse all HTML first so internal fragment checks can resolve every page.
     for file in ROOT.rglob("*.html"):
@@ -386,6 +395,8 @@ def main() -> int:
     # llms.txt is an optional Markdown index, separate from the search sitemap.
     llms_file = ROOT / "llms.txt"
     llms_links = markdown_links(llms_file, errors)
+    if llms_links.count(TESTFLIGHT_URL) != 1:
+        fail(errors, "llms.txt must include the verified TestFlight link once")
     checked_llms_paths = [check_public_markdown_link(ref, llms_file, errors) for ref in llms_links]
     expected_llms_paths = set(ROUTES)
     expected_llms_paths.update(f"/{relative}" for relative in MARKDOWN_PAGES.values())
@@ -398,7 +409,10 @@ def main() -> int:
         if not markdown_file.is_file():
             fail(errors, f"Missing clean Markdown page: {markdown_file.relative_to(ROOT)}")
             continue
-        for ref in markdown_links(markdown_file, errors):
+        refs = markdown_links(markdown_file, errors)
+        if refs.count(TESTFLIGHT_URL) != 1:
+            fail(errors, f"Expected one verified TestFlight link in {markdown_file.relative_to(ROOT)}")
+        for ref in refs:
             check_public_markdown_link(ref, markdown_file, errors)
 
     # Every JSON-LD block parses, and page-specific types match the visible pages.

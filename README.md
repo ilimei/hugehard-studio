@@ -27,9 +27,15 @@ GitHub Pages 操作细节与 DNS 目标可能更新，请以 [发布源设置说
 
 Cloudflare 默认的 Email Address Obfuscation 会在返回的页面中注入邮箱解码脚本。这是邮箱显示保护，不是站点跟踪脚本。`hugehardzhang@gmail.com` 是有意公开的业务联系邮箱，保持当前 Cloudflare 设置即可。
 
+## TestFlight 公开外测状态
+
+截至 2026 年 10 月 14 日，App Store Connect 中的 TestFlight 外部测试群组已关联 App 1.0 (2)，状态为等待 Apple Beta 审核。公开测试页为 [https://testflight.apple.com/join/GK8ht2vv](https://testflight.apple.com/join/GK8ht2vv)，当前页面提示暂不接受新测试员；审核通过后才会开放加入。首批名额上限为 100 人。App Store 1.0 版本仍在审核中。
+
+当前 Beta 支持 iOS 17 及以上，App 界面为简体中文，包含六项本机影像工具。截图交付助手仍在开发中，未包含于 1.0 (2)；不要将它描述为当前 Beta 已有功能。简体中文与英语（美国）的 TestFlight Beta 描述和 What to Test 已保存。获批后，先核对公开页面确实允许新测试员加入，再将网站按钮从“审核中”更新为可加入状态；无需猜测或替换链接。
+
 ## SEO 与语言版本维护
 
-本轮曝光优先围绕 iPhone 视频转 Live Photo / 视频转实况照片，入口统一指向现有规范指南 `/guides/video-to-live-photo/` 与英文镜像 `/en/guides/video-to-live-photo/`，不另建重复关键词页。《这图能改》继续标注准备上线；下载入口待取得并核实可用地址后再添加，不使用占位或猜测链接。
+本轮曝光优先围绕 iPhone 视频转 Live Photo / 视频转实况照片，入口统一指向现有规范指南 `/guides/video-to-live-photo/` 与英文镜像 `/en/guides/video-to-live-photo/`，不另建重复关键词页。TestFlight 入口使用上方记录的公开链接并保留审核中状态；不要标成可下载或可加入，直到 Apple 审核通过且公开页面确认接受测试员。
 
 网站提供简体中文和英文两套页面。新增或修改成对页面时，按相同内容路径互链：中文在 `/` 与 `/apps/...`，英文在 `/en/` 与 `/en/apps/...`；教程对应放在 `/guides/` 和 `/en/guides/`。
 
@@ -37,7 +43,7 @@ Cloudflare 默认的 Email Address Obfuscation 会在返回的页面中注入邮
 - 每个中英文页面都设置指向自身的 canonical、对应语言的 `zh-Hans` 与 `en` alternate，以及指向中文对应页的 `x-default`。站内导航使用规范目录 URL 或实际 `.html` 文件地址，不链接 `index.html`。
 - `sitemap.xml` 只列出 canonical 的可索引页面；不要加入 `404.html`。`robots.txt` 保持正常开放抓取。
 - 结构化数据必须与可见文案一致：首页维护 `Organization` 与 `WebSite`，产品页使用 `WebPage`，并用共享 `Thing` 描述中文产品名与英文站点名称，教程维护 `Article` 与 `BreadcrumbList`。教程作者使用 HugeHard Studio，不添加虚构个人作者、价格、评分、下载链接或未经核实的统计。
-- 目前产品准备上线，没有真实商店价格或应用评价，因此不标记 `SoftwareApplication` 富结果。Google 的该类富结果要求 `offers.price` 和 `rating` 或 `review`；等真实商品价格与评价可核实后，再按[官方规范](https://developers.google.com/search/docs/appearance/structured-data/software-app)评估是否添加。
+- 当前 TestFlight 1.0 (2) 外测与 App Store 1.0 版本均在审核中；尚无已发布的 App Store 产品页和用户评分/评价，因此不标记 `SoftwareApplication` 富结果。Google 的该类富结果要求 `offers.price` 和 `rating` 或 `review`；待有可核实的公开商店资料后，再按[官方规范](https://developers.google.com/search/docs/appearance/structured-data/software-app)评估是否添加。
 - 教程需根据当前产品行为核实步骤、数值和限制。页面日期与 Article schema 中的日期同步更新；变更中英文页面时，同时更新对应语言路径。
 - 搜索平台的站点验证、站点地图提交和收录状态需在平台中单独操作与核验；仅把带日期的平台返回状态记录在下文，不据此推断未检查页面的收录情况。
 
@@ -55,7 +61,7 @@ Cloudflare 默认的 Email Address Obfuscation 会在返回的页面中注入邮
 python3 validate-site.py
 ```
 
-脚本检查 canonical、hreflang 配对、站点地图、站内链接、`describedby`/Markdown 关联目标和 JSON-LD 语言与页面结构；也验证 `llms.txt` 与四份 Markdown 文档的同源链接。
+脚本检查 canonical、hreflang 配对、站点地图、站内链接、`describedby`/Markdown 关联目标和 JSON-LD 语言与页面结构；也验证 `llms.txt` 与四份 Markdown 文档的链接，并确认 TestFlight 外链使用已核实的公开地址。
 
 ## 本地预览
 
