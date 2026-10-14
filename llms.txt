@@ -1,0 +1,33 @@
+# HugeHard Studio
+
+> HugeHard Studio is developing “这图能改”, an iOS 17+ photo and video utility. The English-language site calls the app “This Pic Can Change”; the app interface is currently in Simplified Chinese. Its status is Preparing for launch.
+
+The app provides on-device photo and video tools, screenshot delivery, photo and game widgets, and optional AI image generation and editing configured by the user. Ordinary image and video processing runs on device. Optional AI requests go to the configured provider, which may process the submitted content and charge the user. Support: hugehardzhang@gmail.com.
+
+## Clean Markdown
+
+- [产品资料：这图能改](https://hugehard.app/apps/this-pic-can-change/index.md)
+- [Product information: This Pic Can Change](https://hugehard.app/en/apps/this-pic-can-change/index.md)
+- [指南：iPhone 视频转实况照片](https://hugehard.app/guides/video-to-live-photo/index.md)
+- [Guide: iPhone video to Live Photo](https://hugehard.app/en/guides/video-to-live-photo/index.md)
+
+## Public HTML pages
+
+- [工作室首页](https://hugehard.app/)
+- [网站隐私说明](https://hugehard.app/privacy.html)
+- [产品介绍：这图能改](https://hugehard.app/apps/this-pic-can-change/)
+- [App 隐私政策](https://hugehard.app/apps/this-pic-can-change/privacy.html)
+- [使用支持](https://hugehard.app/apps/this-pic-can-change/support.html)
+- [实用指南索引](https://hugehard.app/guides/)
+- [图片压缩指南](https://hugehard.app/guides/image-compression/)
+- [视频转实况照片指南](https://hugehard.app/guides/video-to-live-photo/)
+- [截图交付指南](https://hugehard.app/guides/screenshot-delivery/)
+- [Studio home](https://hugehard.app/en/)
+- [Website privacy notice](https://hugehard.app/en/privacy.html)
+- [Product overview: This Pic Can Change](https://hugehard.app/en/apps/this-pic-can-change/)
+- [App privacy policy](https://hugehard.app/en/apps/this-pic-can-change/privacy.html)
+- [Product support](https://hugehard.app/en/apps/this-pic-can-change/support.html)
+- [Practical guides](https://hugehard.app/en/guides/)
+- [Image-compression guide](https://hugehard.app/en/guides/image-compression/)
+- [Video-to-Live-Photo guide](https://hugehard.app/en/guides/video-to-live-photo/)
+- [Screenshot-delivery guide](https://hugehard.app/en/guides/screenshot-delivery/)

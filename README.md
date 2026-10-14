@@ -29,6 +29,8 @@ Cloudflare 默认的 Email Address Obfuscation 会在返回的页面中注入邮
 
 ## SEO 与语言版本维护
 
+本轮曝光优先围绕 iPhone 视频转 Live Photo / 视频转实况照片，入口统一指向现有规范指南 `/guides/video-to-live-photo/` 与英文镜像 `/en/guides/video-to-live-photo/`，不另建重复关键词页。《这图能改》继续标注准备上线；下载入口待取得并核实可用地址后再添加，不使用占位或猜测链接。
+
 网站提供简体中文和英文两套页面。新增或修改成对页面时，按相同内容路径互链：中文在 `/` 与 `/apps/...`，英文在 `/en/` 与 `/en/apps/...`；教程对应放在 `/guides/` 和 `/en/guides/`。
 
 - 每个可索引页面设置唯一且符合正文的 `title`、`description`、Open Graph 和 Twitter 标题、描述及图标；`og:url` 与自 canonical 一致。
@@ -39,6 +41,12 @@ Cloudflare 默认的 Email Address Obfuscation 会在返回的页面中注入邮
 - 教程需根据当前产品行为核实步骤、数值和限制。页面日期与 Article schema 中的日期同步更新；变更中英文页面时，同时更新对应语言路径。
 - 搜索平台的站点验证、站点地图提交和收录状态需在平台中单独操作与核验；仅把带日期的平台返回状态记录在下文，不据此推断未检查页面的收录情况。
 
+`/llms.txt` 是对 [llms.txt v2 提案](https://llmstxt.org/)的可读资料入口，链接四份精简中英文 Markdown 产品/指南文档和现有 HTML 页面。指定产品页与视频转实况指南通过 `rel="describedby"` 和 `rel="alternate" type="text/markdown"` 指向资料入口及对应 Markdown。它是自愿采用的提案格式，不是 Google 排名功能，也不保证索引或 AI 引用；Google 的[生成式 AI 内容指南](https://developers.google.com/search/docs/fundamentals/using-gen-ai-content)强调准确、优质且相关的内容。保持 Markdown 只复述已公开页面事实；同步修改时检查中英文 HTML、Markdown 与 `llms.txt`。`llms.txt` 和 `.md` 文件不加入 `sitemap.xml`。
+
+## 视频演示素材
+
+`assets/video-to-live-photo-demo.mp4` 来源于项目宣传用模拟器录屏，展示 App 的真实操作；等待片段已剪去。该录屏此前未在外部平台发布；19 秒是视频文件时长，不是转换用时。页面说明界面以准备发布的版本为准。
+
 截至 2026 年 10 月 14 日的平台记录：[Google Search Console 属性](https://search.google.com/search-console?resource_id=sc-domain%3Ahugehard.app) `sc-domain:hugehard.app` 已通过 DNS 验证，站点地图重新提交后状态为 `Success`，报告发现 18 个 URL。发现 URL 不代表全部已收录；首页网址检查显示已收录，实时测试显示可编入索引。[Bing Webmaster Tools 站点地图](https://www.bing.com/webmasters/sitemaps?siteUrl=https%3A%2F%2Fhugehard.app%2F) 的 `https://hugehard.app/` 资源已通过 DNS 验证，站点地图状态仍为 `Processing`。发布新页面后重新提交并分别核对收录状态。
 
 本地运行检查脚本：
@@ -47,7 +55,7 @@ Cloudflare 默认的 Email Address Obfuscation 会在返回的页面中注入邮
 python3 validate-site.py
 ```
 
-脚本检查 canonical、hreflang 配对、站点地图、站内链接和 JSON-LD 语言与页面结构。
+脚本检查 canonical、hreflang 配对、站点地图、站内链接、`describedby`/Markdown 关联目标和 JSON-LD 语言与页面结构；也验证 `llms.txt` 与四份 Markdown 文档的同源链接。
 
 ## 本地预览
 
@@ -65,6 +73,8 @@ python3 -m http.server 8000
 - `apps/this-pic-can-change/`：产品介绍、隐私政策和使用支持。
 - `en/` 与 `en/apps/this-pic-can-change/`：English 网站、产品、隐私与支持镜像。
 - `guides/`、`en/guides/`：中英指南索引及图片压缩、视频转实况、截图交付教程。
+- `llms.txt` 与四份 `index.md`：中英产品和视频转实况页面的精简机器可读资料。
+- `assets/video-to-live-photo-demo.mp4`：视频转实况指南引用的本地录屏素材。
 - `privacy.html`：本网站的数据处理，以及 Cloudflare 代理和 GitHub Pages 托管日志。
 - `404.html`：站内未找到页面时显示。
 - `assets/styles.css`：共享样式。

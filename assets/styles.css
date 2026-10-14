@@ -185,6 +185,13 @@ figcaption { margin-top: .75rem; color: var(--muted); font-size: .88rem; }
 .guide-callout { margin-block: 1.5rem; padding: 1rem 1.15rem; border-left: 2px solid var(--sun); background: var(--paper-bright); }
 .guide-callout p:last-child { margin-bottom: 0; }
 .guide-rows { margin-top: 1.5rem; }
+.guide-screenshot { width: min(100%, 22rem); margin: 1.75rem auto 2.25rem; }
+.guide-screenshot .shot-frame img { display: block; width: 100%; }
+.guide-screenshot video { display: block; width: 100%; height: auto; border-radius: 1.85rem; }
+.faq-list { margin-block: 1.25rem 2rem; border-top: 1px solid var(--line); }
+.faq-item { padding-block: 1.1rem; border-bottom: 1px solid var(--line); }
+.faq-item h3 { margin-bottom: .45rem; }
+.faq-item p { margin-bottom: 0; color: #34332d; }
 .prose h1 { max-width: 22ch; margin-bottom: .6rem; font-size: clamp(2.3rem, 5vw, 3.8rem); }
 .prose h2 { margin-top: 2.3rem; margin-bottom: .65rem; font-size: 1.38rem; }
 .prose h3 { margin-top: 1.6rem; margin-bottom: .55rem; font-size: 1.08rem; }

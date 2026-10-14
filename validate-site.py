@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 import xml.etree.ElementTree as ET
 from collections import defaultdict
@@ -50,6 +51,18 @@ LANGUAGE_PAIRS = (
     ("/guides/screenshot-delivery/", "/en/guides/screenshot-delivery/"),
 )
 
+MARKDOWN_PAGES = {
+    "/apps/this-pic-can-change/": "apps/this-pic-can-change/index.md",
+    "/en/apps/this-pic-can-change/": "en/apps/this-pic-can-change/index.md",
+    "/guides/video-to-live-photo/": "guides/video-to-live-photo/index.md",
+    "/en/guides/video-to-live-photo/": "en/guides/video-to-live-photo/index.md",
+}
+LLMS_DESCRIBED_ROUTES = {
+    "/", "/en/",
+    "/apps/this-pic-can-change/", "/en/apps/this-pic-can-change/",
+    "/guides/video-to-live-photo/", "/en/guides/video-to-live-photo/",
+}
+
 
 class PageParser(HTMLParser):
     def __init__(self) -> None:
@@ -63,9 +76,14 @@ class PageParser(HTMLParser):
         self.meta: dict[str, list[str]] = defaultdict(list)
         self.canonicals: list[str] = []
         self.alternates: dict[str, list[str]] = defaultdict(list)
+        self.describedby: list[str] = []
+        self.markdown_alternates: list[str] = []
         self.hrefs: list[str] = []
         self.language_links: list[str] = []
         self.resources: list[str] = []
+        self.videos: list[dict[str, str | None]] = []
+        self.video_sources: list[str] = []
+        self.video_source_types: list[str] = []
         self.ids: set[str] = set()
         self.jsonld_parts: list[str] = []
         self.current_script_is_jsonld = False
@@ -103,6 +121,12 @@ class PageParser(HTMLParser):
                     self.canonicals.append(href)
                 if "alternate" in rels and values.get("hreflang"):
                     self.alternates[values["hreflang"] or ""].append(href)
+                if "describedby" in rels:
+                    self.describedby.append(href)
+                    self.resources.append(href)
+                if "alternate" in rels and values.get("type", "").lower() == "text/markdown":
+                    self.markdown_alternates.append(href)
+                    self.resources.append(href)
                 if rels.intersection({"stylesheet", "icon"}):
                     self.resources.append(href)
         if tag == "a" and values.get("href"):
@@ -111,6 +135,17 @@ class PageParser(HTMLParser):
                 self.language_links.append(values["href"] or "")
         if tag == "img" and values.get("src"):
             self.resources.append(values["src"] or "")
+        if tag == "video":
+            self.videos.append(values)
+            if values.get("poster"):
+                self.resources.append(values["poster"] or "")
+            if values.get("src"):
+                self.resources.append(values["src"] or "")
+        if tag == "source" and values.get("src"):
+            source = values["src"] or ""
+            self.video_sources.append(source)
+            self.video_source_types.append(values.get("type", "") or "")
+            self.resources.append(source)
         if tag == "script" and values.get("type", "").lower() == "application/ld+json":
             self.current_script_is_jsonld = True
             self.current_jsonld_parts = []
@@ -192,6 +227,37 @@ def schema_types(value: object) -> list[dict]:
     return found
 
 
+def markdown_links(path: Path, errors: list[str]) -> list[str]:
+    try:
+        source = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeError) as exc:
+        fail(errors, f"Cannot read {path.relative_to(ROOT)}: {exc}")
+        return []
+    if not any(line.startswith("# ") for line in source.splitlines()):
+        fail(errors, f"Markdown source needs an H1: {path.relative_to(ROOT)}")
+    return re.findall(r"\[[^\]]+\]\(([^)]+)\)", source)
+
+
+def check_public_markdown_link(ref: str, source: Path, errors: list[str]) -> str | None:
+    parsed = urlparse(ref)
+    if parsed.scheme != "https" or parsed.netloc != "hugehard.app":
+        fail(errors, f"Markdown link must stay on the public site origin in {source.relative_to(ROOT)}: {ref}")
+        return None
+    target_path = unquote(parsed.path)
+    target = ROOT / target_path.lstrip("/")
+    if target.is_dir():
+        target = target / "index.html"
+    try:
+        target = target.resolve()
+        target.relative_to(ROOT)
+    except ValueError:
+        fail(errors, f"Markdown link escapes site root in {source.relative_to(ROOT)}: {ref}")
+        return None
+    if not target.is_file():
+        fail(errors, f"Missing Markdown link target in {source.relative_to(ROOT)}: {ref}")
+    return target_path
+
+
 def main() -> int:
     errors: list[str] = []
     route_files: dict[str, Path] = {}
@@ -231,6 +297,16 @@ def main() -> int:
             fail(errors, f"Expected Twitter summary card on {route}")
         if len(parser.canonicals) != 1 or parser.canonicals[0] != f"{BASE}{route}":
             fail(errors, f"Canonical must be self-referencing for {route}")
+        expected_describedby = ["/llms.txt"] if route in LLMS_DESCRIBED_ROUTES else []
+        if parser.describedby != expected_describedby:
+            fail(errors, f"Unexpected describedby target on {route}: {parser.describedby}")
+        expected_markdown = [f"/{MARKDOWN_PAGES[route]}"] if route in MARKDOWN_PAGES else []
+        if parser.markdown_alternates != expected_markdown:
+            fail(errors, f"Unexpected Markdown alternate on {route}: {parser.markdown_alternates}")
+        for ref in parser.describedby + parser.markdown_alternates:
+            parsed_metadata_link = urlparse(ref)
+            if parsed_metadata_link.scheme or parsed_metadata_link.netloc or not ref.startswith("/"):
+                fail(errors, f"Metadata link must use a root-relative same-origin path on {route}: {ref}")
         for ref in parser.hrefs + parser.resources:
             parsed_ref = urlparse(ref)
             if not parsed_ref.scheme and not parsed_ref.netloc and Path(parsed_ref.path).name == "index.html":
@@ -307,6 +383,24 @@ def main() -> int:
     if "Allow: /" not in robots or f"Sitemap: {BASE}/sitemap.xml" not in robots:
         fail(errors, "robots.txt must allow crawling and advertise sitemap.xml")
 
+    # llms.txt is an optional Markdown index, separate from the search sitemap.
+    llms_file = ROOT / "llms.txt"
+    llms_links = markdown_links(llms_file, errors)
+    checked_llms_paths = [check_public_markdown_link(ref, llms_file, errors) for ref in llms_links]
+    expected_llms_paths = set(ROUTES)
+    expected_llms_paths.update(f"/{relative}" for relative in MARKDOWN_PAGES.values())
+    if set(path for path in checked_llms_paths if path is not None) != expected_llms_paths:
+        fail(errors, "llms.txt must link all canonical HTML routes and the four clean Markdown pages")
+    if any(path.endswith("/llms.txt") for path in checked_llms_paths if path is not None):
+        fail(errors, "llms.txt must not link to itself")
+    markdown_file_paths = [ROOT / relative for relative in MARKDOWN_PAGES.values()]
+    for markdown_file in markdown_file_paths:
+        if not markdown_file.is_file():
+            fail(errors, f"Missing clean Markdown page: {markdown_file.relative_to(ROOT)}")
+            continue
+        for ref in markdown_links(markdown_file, errors):
+            check_public_markdown_link(ref, markdown_file, errors)
+
     # Every JSON-LD block parses, and page-specific types match the visible pages.
     parsed_schemas: dict[str, list[dict]] = {}
     for route, parser in route_parsers.items():
@@ -366,6 +460,44 @@ def main() -> int:
                     if actual_breadcrumb_urls != expected_breadcrumb_urls:
                         fail(errors, f"Breadcrumb URLs do not match route hierarchy: {route}")
 
+    video_routes = ("/guides/video-to-live-photo/", "/en/guides/video-to-live-photo/")
+    video_object_id = f"{BASE}/#live-photo-demo"
+    video_content_url = f"{BASE}/assets/video-to-live-photo-demo.mp4"
+    video_thumbnail_url = f"{BASE}/apps/this-pic-can-change/assets/04-livephoto-result.jpeg"
+    for route, parser in route_parsers.items():
+        if route not in video_routes:
+            if parser.videos or parser.video_sources:
+                fail(errors, f"Unexpected video player outside the approved Live Photo guide: {route}")
+            continue
+        if len(parser.videos) != 1 or parser.video_sources != ["/assets/video-to-live-photo-demo.mp4"]:
+            fail(errors, f"Live Photo guide must use the approved local demo video once: {route}")
+        if parser.video_source_types != ["video/mp4"]:
+            fail(errors, f"Live Photo demo source must be declared as video/mp4: {route}")
+        if len(parser.videos) == 1:
+            player = parser.videos[0]
+            expected_poster = "/apps/this-pic-can-change/assets/04-livephoto-result.jpeg"
+            if player.get("poster") != expected_poster:
+                fail(errors, f"Live Photo demo must use the approved screenshot poster: {route}")
+            if not {"controls", "playsinline"}.issubset(player) or player.get("preload") != "none" or "autoplay" in player:
+                fail(errors, f"Live Photo demo must be user-controlled, inline, and non-autoplaying: {route}")
+            if player.get("width") != "720" or player.get("height") != "1564":
+                fail(errors, f"Live Photo demo dimensions must match the source video: {route}")
+        objects = [node for node in parsed_schemas.get(route, []) if node.get("@type") == "VideoObject"]
+        if len(objects) != 1:
+            fail(errors, f"Live Photo guide needs exactly one VideoObject: {route}")
+        else:
+            video = objects[0]
+            if video.get("@id") != video_object_id or video.get("contentUrl") != video_content_url:
+                fail(errors, f"VideoObject contentUrl and shared @id must match the embedded asset: {route}")
+            if video.get("thumbnailUrl") != video_thumbnail_url:
+                fail(errors, f"VideoObject thumbnail must use the approved screenshot: {route}")
+            if video.get("duration") != "PT19S" or video.get("uploadDate") != "2026-10-14":
+                fail(errors, f"VideoObject duration and first-publication date must match the reviewed clip: {route}")
+            if video.get("inLanguage") != "zh-Hans":
+                fail(errors, f"VideoObject language must describe the Simplified Chinese app UI: {route}")
+            if any(key in video for key in ("interactionStatistic", "userInteractionCount", "aggregateRating", "review")):
+                fail(errors, f"VideoObject must not invent viewing statistics or ratings: {route}")
+
     zh_home = parsed_schemas.get("/", [])
     en_home = parsed_schemas.get("/en/", [])
     zh_website = next((node for node in zh_home if node.get("@type") == "WebSite"), {})
@@ -388,7 +520,7 @@ def main() -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print(f"Site validation passed: {len(ROUTES)} canonical routes, {len(LANGUAGE_PAIRS)} language pairs, sitemap, local references, and JSON-LD.")
+    print(f"Site validation passed: {len(ROUTES)} canonical routes, {len(LANGUAGE_PAIRS)} language pairs, llms.txt and Markdown links, sitemap, local references, and JSON-LD.")
     return 0
 
 
