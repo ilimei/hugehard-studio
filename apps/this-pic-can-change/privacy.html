@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f0e7">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <title>隐私政策 · 这图能改｜HugeHard Studio</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html" aria-label="HugeHard Studio 首页">
+        <img src="../../assets/app-icon.png" alt="">
+        <span>HugeHard Studio<small>这图能改隐私政策</small></span>
+      </a>
+      <nav class="site-nav" aria-label="主要导航">
+        <a href="../../index.html">工作室</a>
+        <a href="index.html">产品介绍</a>
+        <a href="support.html">使用支持</a>
+        <a href="privacy.html" aria-current="page">App 隐私</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container document-page">
+    <nav class="document-nav" aria-label="产品页面导航">
+      <a href="index.html">产品介绍</a>
+      <a href="privacy.html">隐私政策</a>
+      <a href="support.html">使用支持</a>
+    </nav>
+    <article class="prose">
+  <h1>这图能改 · 隐私政策</h1>
+  <p>更新日期：2026年10月14日。适用版本：1.0。</p>
+
+  <h2>我们处理哪些内容</h2>
+  <p>“这图能改”不要求你注册开发者账号。七项本机工具不会把素材上传至开发者服务器。你选择的照片和文件会在本机缓存供处理；本地最近记录、草稿和小组件数据也保存在设备上。可选 AI 数据流见下文。</p>
+
+  <h2>可选 AI 服务会收到什么</h2>
+  <p>AI 生图和 AI 改图是可选的联网功能。你在“工具”页的“AI 创作”中选择功能，在“设置”页的“AI 服务配置”中配置服务商、协议、模型、Base URL 和你自己的 API Key。AI 请求从设备直接发送到该配置地址，不经过本 App 的开发者服务器。AI 请求不扣本 App 的每周免费处理次数；服务商可能按自己的价格向你的账号计费，取消等待也不一定能阻止已经提交的请求继续处理或计费。</p>
+  <ul>
+    <li><strong>连接检查：</strong>你点“检查连接并获取模型”后，App 会向配置地址的模型列表接口发送 API Key。支持模型列表检查的协议不会发送照片或提示词，也不会发起生图；ZenMux 的 Gemini Vertex 协议只在本机检查配置，不请求模型列表。</li>
+    <li><strong>AI 生图：</strong>你确认并开始后，提示词、所选服务与模型以及该协议需要的生成选项会发送给接收服务。</li>
+    <li><strong>AI 改图：</strong>你确认并开始后，参考图片先在设备上做方向和格式适配，再与提示词一起发给接收服务。</li>
+  </ul>
+  <p>首次对某个服务商、协议、完整 Base URL 和生图/改图模式提交时，App 会显示接收主机与将要发送的内容并等待你确认。相同配置与模式下，确认会保存在本机；App 没有单独清除已接受目的地记录的设置，但确认不会自动启动请求，你每次仍需主动开始。更改地址、协议或模式需要重新确认。若不再希望发送请求，请勿开始新的 AI 任务；也可清除本机 API Key，并在服务商处撤销该 Key。连接检查是单独的操作，会在按钮旁说明它会把 API Key 发给哪一方。</p>
+
+  <h2>服务商的数据处理由其政策决定</h2>
+  <p>OpenRouter、ZenMux、OpenAI、Google Gemini 或你填写的自定义服务地址可能由不同主体运营。接收方可从请求中看到其处理所需的内容以及连接信息。它可能记录 API 请求、提示词、图片、账号关联信息、网络地址或生成结果；保存期限、用于滥用检测的方式、是否用于模型改进或训练、删除方式和处理地区，取决于你选择的服务商和具体账号条款。本 App 不控制这些做法，也不代表这些服务都会立即删除请求或一律不用于训练。使用前请阅读实际接收服务的隐私政策和条款；如果不接受其处理方式，请不要提交提示词或图片。自定义 Base URL 的运营方由你自行选择。</p>
+
+  <h2>生成图片下载与本机恢复</h2>
+  <p>服务可能直接在响应中返回图片，也可能返回一个 HTTPS 图片链接。后一种情况下，App 会向该链接的主机另行下载生成图片。该下载请求不带上你的 AI API Key、Cookie 或凭据存储；链接本身可能带有服务商签发的临时访问参数。为便于下载中断后重试，App 会在本机保存下载链接、创作记录，以及改图时必要的处理后参考图片，并将这些恢复文件排除在系统备份之外。链接可能过期；从“工具”页出现的“待下载结果”中重试只会重新下载，不会再次提交生成请求。移除待下载记录会删除本机链接和参考图，不会要求服务商删除其副本。</p>
+
+  <h2>本机草稿、最近记录和小组件</h2>
+  <p>生图与改图各自的草稿会在本机保存提示词、风格或修改方向及处理后的参考图片。恢复草稿不会发出 AI 请求；你可以在对应创作页面选择“清除草稿”。AI 结果、提示词、模型等创作信息以及必要的参考图片会归档在“最近”记录，供再次查看和编辑。最近记录最多保留 100 条，归档输出最多占 1 GB；超过限制时较早文件可能被清理。在“最近”删除记录会清除 App 管理的相应本机归档，不会删除已保存到照片图库、分享至其他 App 或已由服务商保留的数据。</p>
+  <p>若 AI 图片已生成但未能归档到“最近”，它可能在“工具”页显示为“未保存图片”，供你查看或移除；本机最多保留 3 张未归档图片。仅保存在内存中的图片会在退出 App 后丢失。选择“移除未保存图片”会删除该临时图片及其本机记录。</p>
+  <p>照片小组件和桌面小游戏将你选择的照片副本、排列和游戏进度保存在 App Group 本机共享目录，供 App 与小组件读取；这些功能不把照片或进度上传到开发者服务器。普通影像处理会使用临时缓存，系统也可能按自身规则管理临时文件。处理失败时，App 可能在本机记录时间、处理阶段和系统错误详情；详情中可能包含关联文件路径。错误日志不会自动上传给开发者。</p>
+  <p>周免费额度记录保存在设备 Keychain。iOS 可能在卸载 App 后保留 Keychain 项，因此重新安装后可能仍保留额度记录。待下载恢复记录（其中可能包含服务商签发的图片链接）会排除在系统备份之外；其他本机数据的备份和恢复取决于系统规则与设备设置。我们不声称所有本机文件都排除备份。</p>
+
+  <h2>API Key、购买与错误信息</h2>
+  <p>API Key 按服务商和 Base URL 主机分别保存在设备 Keychain，不写入普通偏好设置；Key 使用仅限本设备的 Keychain 存取方式。连接检查和 AI 请求会把 Key 发给当前配置的接收服务。清除本机 Key 不会替你在服务商端撤销或删除该 Key；如需停用，请到服务商账户管理处撤销。错误诊断信息保存在本机，不会自动上传给开发者；若你主动联系支持并附上诊断内容，内容会由客服邮箱接收和处理。请勿通过邮件发送 API Key、认证头、私人照片或提示词。</p>
+  <p>永久版购买和恢复购买由 Apple StoreKit/App Store 处理。App 读取经过 StoreKit 验证的商品和交易权益，不接收银行卡号或付款密码，也不把购买记录发送到开发者服务器。Apple 对商店账户与交易信息的处理受 Apple 隐私政策约束。</p>
+
+  <h2>广告、分析和追踪</h2>
+  <p>当前代码版本未接入广告、第三方分析或跨 App/网站追踪 SDK。设备本机处理的素材、草稿、最近记录和错误日志不会上传到开发者服务器。你主动使用 AI 时，数据仍会按本政策前述方式发送给所选服务接收方。</p>
+
+  <h2>本网站与 GitHub Pages 托管</h2>
+  <p>本网站由 GitHub Pages 托管，页面没有联系表单、广告、第三方分析或跟踪脚本，也没有嵌入外部内容。域名解析与网站代理由 Cloudflare 提供；访问请求可能经过 Cloudflare 并由其按隐私政策处理访问 IP 与请求信息。若你主动点击客服邮箱链接发送邮件，邮件内容会由客服邮箱接收。</p>
+  <p>GitHub 官方说明，访问 GitHub Pages 网站时会记录并为安全目的保存访客 IP 地址，无论访客是否登录。GitHub 的一般隐私声明也说明其可能记录来源网站、访问时间、浏览页面和点击链接等网站使用数据。请阅读 <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">GitHub Pages 数据收集说明</a>、<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub 一般隐私声明</a>和 <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare 隐私政策</a>了解托管与代理服务的数据处理方式。</p>
+  <p>这些托管与代理层的访问日志或请求信息由 GitHub Pages 和 Cloudflare 按各自隐私政策处理，属于网站服务层，不是 App 遥测，也不表示 App 会把设备上的素材、草稿或处理记录发送给 App 开发者。</p>
+
+  <h2>删除和联系</h2>
+  <p>你可在 App 内清除生图或改图草稿、删除“最近”记录、移除待下载记录，并在“设置”→“AI 服务配置”中清除当前地址的 API Key。上述操作只管理 App 设备上的数据，不会删除系统照片图库或其他 App 中已保存/分享的副本，也不会替你删除或撤销服务商保存的数据或 Key；远端删除需按对应服务商的账户流程办理。要停止后续 AI 请求，请不要提交新任务，并可同时清除本机 Key、到服务商处撤销该 Key。</p>
+  <p>客服邮箱：<a href="mailto:hugehardzhang@gmail.com">hugehardzhang@gmail.com</a></p>
+  <p>联系时请只提供排查所需的信息，例如设备型号、系统和 App 版本、所用工具、服务主机、协议、模型及错误提示。请先遮盖密钥和其他敏感信息；无需发送原始照片、视频或完整提示词。</p>
+
+  <p><a href="support.html">使用支持</a></p>
+
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">HugeHard Studio · 这图能改</span>
+      <nav class="footer-links" aria-label="页脚导航">
+        <a href="../../index.html">工作室首页</a>
+        <a href="index.html">产品介绍</a>
+        <a href="privacy.html">App 隐私</a>
+        <a href="support.html">使用支持</a>
+        <a href="mailto:hugehardzhang@gmail.com">客服邮箱</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
