@@ -505,7 +505,7 @@ def main() -> int:
                 fail(errors, f"VideoObject contentUrl and shared @id must match the embedded asset: {route}")
             if video.get("thumbnailUrl") != video_thumbnail_url:
                 fail(errors, f"VideoObject thumbnail must use the approved screenshot: {route}")
-            if video.get("duration") != "PT19S" or video.get("uploadDate") != "2026-10-14":
+            if video.get("duration") != "PT19S" or video.get("uploadDate") != "2026-10-14T12:50:25Z":
                 fail(errors, f"VideoObject duration and first-publication date must match the reviewed clip: {route}")
             if video.get("inLanguage") != "zh-Hans":
                 fail(errors, f"VideoObject language must describe the Simplified Chinese app UI: {route}")
