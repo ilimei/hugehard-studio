@@ -18,7 +18,7 @@
   <meta property="og:image" content="https://hugehard.app/assets/app-icon.png">
   <meta property="og:image:alt" content="This Pic Can Change app icon">
   <meta property="article:published_time" content="2026-10-14">
-  <meta property="article:modified_time" content="2026-10-14">
+  <meta property="article:modified_time" content="2026-10-20">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="How to Compress an Image to a Target Size | HugeHard Studio">
   <meta name="twitter:description" content="Choose an output format and target, understand JPEG/HEIC, PNG, and GIF limits, and check the actual file.">
@@ -37,7 +37,7 @@
         "description": "Set an image target in This Pic Can Change and understand JPEG/HEIC quality search, lossless PNG, GIF timing, and result checks.",
         "image": "https://hugehard.app/assets/app-icon.png",
         "datePublished": "2026-10-14",
-        "dateModified": "2026-10-14",
+        "dateModified": "2026-10-20",
         "author": { "@type": "Organization", "name": "HugeHard Studio", "url": "https://hugehard.app/" },
         "publisher": { "@type": "Organization", "name": "HugeHard Studio", "url": "https://hugehard.app/" },
         "mainEntityOfPage": { "@type": "WebPage", "@id": "https://hugehard.app/en/guides/image-compression/" },
@@ -72,15 +72,15 @@
       <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/en/">Home</a></li><li><a href="/en/guides/">Guides</a></li><li aria-current="page">Image compression</li></ol></nav>
       <p class="eyebrow">Image processing</p>
       <h1>How to compress an image to a target size</h1>
-      <p class="article-meta">Written and maintained by HugeHard Studio · Updated 14 October 2026</p>
-      <p class="lead">A target is a value to try, not a guarantee for every format or source image. After compression, use the result screen’s actual file size, format, and pixel dimensions as your reference.</p>
+      <p class="article-meta">Written and maintained by HugeHard Studio · Updated 20 October 2026</p>
+      <p class="lead">A target is a value to try, not a guarantee for every format or source image. After compression, use the result screen’s actual file size, format, and pixel dimensions as your reference. The app interface is Simplified Chinese; labels below include their on-screen wording.</p>
 
       <h2>Steps</h2>
       <ol class="guide-steps">
-        <li>In This Pic Can Change, open Tools (“工具”) → Image Compression (“图片压缩”), then import an image from Photos or Files. Processing happens on device and does not overwrite the original.</li>
-        <li>Set a target size and choose an output format. The target is adjusted in whole KB, or in whole bytes when the source image is smaller than 1 KB; its range is limited by the imported file’s size. Turn on “Keep original size” (“保留原尺寸”) to preserve pixel dimensions. If it is off, you can choose output dimensions.</li>
-        <li>Read the format-specific note. JPEG and HEIC search encoding quality to try to keep better quality within the target byte count. This does not guarantee the target will be met. When a transparent image is converted to JPEG, transparent areas are filled with white.</li>
-        <li>For a GIF, keep the animated format. All frames, frame delays, and the loop count are preserved. If you enable target-size compression and the target is still missed, turning off “Keep original size” lets the app try reducing the dimensions while preserving animation timing.</li>
+        <li>In Workbench (“工作台”), select and import a photo. In the image editor, choose Adjust (“调整”), then File Size (“文件大小”). Processing happens on device and does not overwrite the original.</li>
+        <li>Turn on Limit File Size (“限制文件大小”), then drag the ruler or tap its value to enter a precise target. The available range runs from the minimum for the current source to the source file’s size. File Size and Pixel Size are separate controls. To reduce dimensions, choose a maximum edge in Pixel Size (“像素尺寸”); the app does not enlarge the source.</li>
+        <li>Choose Format (“格式”) in the editor’s bottom bar and select an output format, then return to Adjust (“调整”) to read its note. JPEG and HEIC search encoding quality to try to keep better quality within the target byte count. This does not guarantee the target will be met. When a transparent image is converted to JPEG, transparent areas are filled with white.</li>
+        <li>When the input is an animated GIF and GIF remains the output format, all frames, frame delays, and the loop count are preserved. If the file-size limit is still not reached, choose a smaller maximum edge under Adjust (“调整”) → Pixel Size (“像素尺寸”), then generate and check the actual file.</li>
         <li>PNG uses lossless encoding. It does not reduce image quality to make the file smaller, so the output may remain above the target.</li>
         <li>Check the result preview for actual file size and pixel dimensions, then save to Photos or share. If the target is missed, the result screen shows the actual size and an explanation.</li>
       </ol>

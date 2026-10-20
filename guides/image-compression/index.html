@@ -18,7 +18,7 @@
   <meta property="og:image" content="https://hugehard.app/assets/app-icon.png">
   <meta property="og:image:alt" content="这图能改 App 图标">
   <meta property="article:published_time" content="2026-10-14">
-  <meta property="article:modified_time" content="2026-10-14">
+  <meta property="article:modified_time" content="2026-10-20">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="图片怎么压到指定大小｜HugeHard Studio 指南">
   <meta name="twitter:description" content="选择输出格式和目标大小，理解 JPEG/HEIC、PNG 和 GIF 的编码限制，并检查实际文件。">
@@ -37,7 +37,7 @@
         "description": "用《这图能改》设置图片目标大小，了解 JPEG/HEIC 质量搜索、PNG 无损限制、GIF 动画时序和结果检查。",
         "image": "https://hugehard.app/assets/app-icon.png",
         "datePublished": "2026-10-14",
-        "dateModified": "2026-10-14",
+        "dateModified": "2026-10-20",
         "author": { "@type": "Organization", "name": "HugeHard Studio", "url": "https://hugehard.app/" },
         "publisher": { "@type": "Organization", "name": "HugeHard Studio", "url": "https://hugehard.app/" },
         "mainEntityOfPage": { "@type": "WebPage", "@id": "https://hugehard.app/guides/image-compression/" },
@@ -72,15 +72,15 @@
       <nav class="breadcrumbs" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li><a href="/guides/">实用指南</a></li><li aria-current="page">图片压缩</li></ol></nav>
       <p class="eyebrow">图片处理</p>
       <h1>图片怎么压到指定大小</h1>
-      <p class="article-meta">作者与维护：HugeHard Studio · 更新于 2026年10月14日</p>
+      <p class="article-meta">作者与维护：HugeHard Studio · 更新于 2026年10月20日</p>
       <p class="lead">目标大小是一个尝试值，不代表所有格式和素材都能达到。压缩后请以结果页显示的文件大小、格式与像素尺寸为准。</p>
 
       <h2>操作步骤</h2>
       <ol class="guide-steps">
-        <li>打开《这图能改》的“工具”，选择“图片压缩”，再从照片或文件选择器导入图片。该工具在设备上处理，不覆盖原始文件。</li>
-        <li>设置目标大小并选择输出格式。目标按整数 KB 调整；原图小于 1 KB 时按整数 B 调整，目标范围会受当前素材大小限制。需要保留像素尺寸时打开“保留原尺寸”；若关闭，可选择输出尺寸。</li>
-        <li>选择格式后查看页面提示。JPEG 和 HEIC 会搜索编码质量，尝试在目标字节数内保留较高质量；这不是达标保证。透明图片转成 JPEG 时，透明区域会铺成白色。</li>
-        <li>如果输入是 GIF，可保持动画格式。GIF 会保留所有帧、帧时长和循环次数；开启目标大小压缩后，如仍未达标且关闭“保留原尺寸”，系统可以缩小画面继续尝试。</li>
+        <li>在“工作台”选择照片并导入；在图片编辑器底部选择“调整”，再选“文件大小”。图片处理在设备上完成，不覆盖原始文件。</li>
+        <li>打开“限制文件大小”，拖动刻度尺设置目标，也可点按数值精确输入。可选范围从当前最小值到源文件大小。文件大小与像素尺寸是两个独立选项；如需缩小画面，在“像素尺寸”中调整最长边，原图不会被放大。</li>
+        <li>在编辑器底部切到“格式”并选择输出格式，再回到“调整”查看对应提示。JPEG 和 HEIC 会搜索编码质量，尝试在目标字节数内保留较高质量；这不是达标保证。透明图片转成 JPEG 时，透明区域会铺成白色。</li>
+        <li>输入 GIF 并保持 GIF 输出时，所有帧、帧时长和循环次数都会保留。若启用文件大小限制后仍未达到目标，可在“调整”→“像素尺寸”中选择较小的最长边，再生成并检查实际文件。</li>
         <li>PNG 使用无损编码。它不会通过降低图像质量来缩小文件，所以结果可能仍大于目标。</li>
         <li>查看预览中的实际文件大小和像素尺寸，再决定保存到照片或分享。即使未达到目标，结果页也会如实显示实际大小与提示。</li>
       </ol>

@@ -1,12 +1,12 @@
 # How to turn an iPhone video into a Live Photo
 
-> Use This Pic Can Change (Chinese app name: “这图能改”) on iPhone or iPad to choose a video iOS can read, select up to three seconds, set a cover, quality, and sound, then save the paired result to Photos. Conversion runs on device. The app supports iOS 17 and later and its interface is Simplified Chinese. TestFlight 1.0 (2) external beta review is pending; screenshot delivery is in development and not included in this beta.
+> On iPhone, open Workbench (“工作台”) in This Pic Can Change (Chinese app name: “这图能改”), choose Photo or Video (“选择照片或视频”), and import a video. In the editor’s bottom mode bar, select Live Photo (“实况”), select up to three seconds, set a cover, quality, and sound, then save the paired result to Photos. Conversion runs on device. The app supports iOS 17 and later and its interface is Simplified Chinese. Version 1.2 (5) and the one-time non-consumable lifetime unlock have been submitted for App Review and are waiting; neither is on the App Store. iPad can run the iPhone compatibility layout.
 
-[View TestFlight (review pending)](https://testflight.apple.com/join/GK8ht2vv). The public page is not accepting testers yet; joining opens after Apple Beta Review approval.
+[Legacy public TestFlight page (may still refer to version 1.0 (2); not the current build)](https://testflight.apple.com/join/GK8ht2vv). It is not a current download link for version 1.2 (5).
 
 ## Steps
 
-1. In Tools (“工具”), open Video to Live Photo (“视频转实况”) and import a video available to the iOS video picker.
+1. In Workbench (“工作台”), choose Photo or Video (“选择照片或视频”) and import a video. In the editor’s bottom mode bar, select Live Photo (“实况”).
 2. Select a segment on the timeline, up to three seconds. Preview plays the source segment; encoding begins after you choose Generate.
 3. Choose a cover frame from inside the selected segment. Preview and export use the same frame.
 4. Choose Original (“原尺寸”), HD (“高清”), or Compact (“小体积”) quality, then decide whether to keep source audio. The three settings cap the output long edge at 4,096, 1,920, and 1,280 pixels respectively; smaller footage is not enlarged. Source video with a long edge above 4,096 pixels is unsupported.
@@ -20,7 +20,7 @@
 
 ## Video demonstration
 
-[Watch the real app-operation recording](https://hugehard.app/assets/video-to-live-photo-demo.mp4). It was captured in the project’s simulator promotion workflow with waiting portions edited out. The 19-second clip length is not a conversion-time measurement. The recording shows a simulator interface; the current beta may differ.
+[Watch the historical feature-demo recording](https://hugehard.app/assets/video-to-live-photo-demo.mp4). It was captured in the project’s simulator promotion workflow with waiting portions edited out. The 19-second clip length is not a conversion-time measurement. The app interface is Simplified Chinese; this recording may differ from version 1.2 (5).
 
 ## Related pages
 
