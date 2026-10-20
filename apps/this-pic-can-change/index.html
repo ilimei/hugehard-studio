@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f4f0e7">
-  <meta name="description" content="为 iPhone 设计的图片工具：在 HEIC、JPEG、PNG、GIF 间转换，裁剪旋转并调整比例，再检查实际像素尺寸和文件大小。v1.2 (5) 等待审核。">
+  <meta name="description" content="照片按需要转换格式、裁剪和调整尺寸；视频选段制作 GIF 或实况。生成后核对实际结果，原素材保留。v1.2 (5) 等待审核。">
   <link rel="canonical" href="https://hugehard.app/apps/this-pic-can-change/">
   <link rel="alternate" hreflang="zh-Hans" href="https://hugehard.app/apps/this-pic-can-change/">
   <link rel="alternate" hreflang="en" href="https://hugehard.app/en/apps/this-pic-can-change/">
@@ -15,13 +15,13 @@
   <meta property="og:site_name" content="HugeHard Studio">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:title" content="这图能改｜iOS 图片与视频工具">
-  <meta property="og:description" content="一张图片可转换为 HEIC、JPEG、PNG 或 GIF，在画布上裁剪旋转、调整比例和尺寸或压缩；导出后查看实际结果。另有截图交付、视频转实况等工具。v1.2 (5) 等待 App Review。">
+  <meta property="og:description" content="照片可按上传或分享需要换格式、裁剪和调整尺寸；视频可选片段制作 GIF 或实况。生成后核对实际结果，再决定保存或分享，原素材保留。v1.2 (5) 等待 App Review。">
   <meta property="og:url" content="https://hugehard.app/apps/this-pic-can-change/">
   <meta property="og:image" content="https://hugehard.app/assets/app-icon.png">
   <meta property="og:image:alt" content="这图能改 App 图标">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="这图能改｜iOS 图片与视频工具">
-  <meta name="twitter:description" content="一张图片可转换为 HEIC、JPEG、PNG 或 GIF，在画布上裁剪旋转、调整比例和尺寸或压缩；导出后查看实际结果。另有截图交付、视频转实况等工具。v1.2 (5) 等待 App Review。">
+  <meta name="twitter:description" content="照片可按上传或分享需要换格式、裁剪和调整尺寸；视频可选片段制作 GIF 或实况。生成后核对实际结果，再决定保存或分享，原素材保留。v1.2 (5) 等待 App Review。">
   <meta name="twitter:image" content="https://hugehard.app/assets/app-icon.png">
   <meta name="twitter:image:alt" content="这图能改 App 图标">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -72,24 +72,24 @@
       <div>
         <p class="eyebrow">图片与视频 · iPhone</p>
         <p class="product-status">等待 App Review · v1.2 (5)</p>
-        <h1 id="product-title">转换图片格式，<br>裁剪出需要的画面。</h1>
-        <p class="lead">选择 HEIC、JPEG、PNG 或 GIF 格式，在画布上裁剪、旋转或选比例，再按需要调整像素尺寸或压缩。生成后预览实际结果，并核对输出。</p>
+        <h1 id="product-title">图片换格式、裁剪；<br>视频做 GIF 和实况。</h1>
+        <p class="lead">图片支持 HEIC、JPEG、PNG、GIF 格式转换，可在画布上裁剪、旋转、选比例，并按需调尺寸或压缩；视频可选片段制作 GIF 或实况，也可压缩。生成后核对实际输出。</p>
         <div class="product-facts" aria-label="产品信息">
           <span>为 iPhone 设计 · iOS 17+</span>
           <span>工作台 · 更多功能 · 最近 · 设置</span>
           <span>界面语言：简体中文</span>
         </div>
         <div class="actions">
-          <a class="action-link" href="#why-this-app">了解图片处理流程</a>
+          <a class="action-link" href="#why-this-app">了解图片与视频流程</a>
           <a class="action-link secondary" href="/apps/this-pic-can-change/support.html">查看当前版本使用支持</a>
           <a class="text-link" href="mailto:hugehardzhang@gmail.com">联系产品支持</a>
         </div>
         <p class="article-meta">v1.2 (5) App 与非消耗型永久解锁已提交 App Review，当前状态为 Waiting for Review（等待审核）；尚未在 App Store 上架。<a href="https://testflight.apple.com/join/GK8ht2vv" target="_blank" rel="noopener noreferrer">旧版公开 TestFlight 页面可能仍指向 1.0 (2)，不代表当前构建</a>，不是当前版本下载入口。App 界面为简体中文；iPad 可使用兼容模式，不提供专用 iPad 版式。</p>
       </div>
-      <aside class="product-hero-note" aria-label="图片格式与导出结果">
-        <p class="eyebrow">一张图的处理流程</p>
-        <strong>HEIC · JPEG · PNG · GIF</strong>
-        <p>在同一画布内裁剪、旋转或选比例；按需调整尺寸或压缩，生成后核对实际格式、像素尺寸和文件体积。</p>
+      <aside class="product-hero-note" aria-label="图片与视频处理流程">
+        <p class="eyebrow">图片与视频</p>
+        <strong>格式 · 构图 · 片段</strong>
+        <p>图片可换格式并调整画面；视频可选片段制作 GIF 或实况，并预览实际结果。</p>
       </aside>
     </section>
 
@@ -97,20 +97,27 @@
       <div class="section-heading">
         <p class="eyebrow">具体使用场景</p>
         <div>
-          <h2 id="why-title">把一张图片处理到符合用途要求。</h2>
-          <p>图片用于上传或分享时，可能需要某种格式、受限的像素尺寸、特定构图或较小的文件体积。这个流程围绕同一张图片逐项调整，并核对实际输出。</p>
+          <h2 id="why-title">把一张照片或一段视频，做成这次需要的版本。</h2>
+          <p>照片要上传或分享时，可能有格式、画面比例、像素尺寸或文件体积要求；想表达或保存视频里的某个瞬间时，可选出片段做成 GIF 或实况，也可压缩视频。两条流程都可先设定输出，生成后核对实际结果，再决定保存或分享；原始素材保留。</p>
         </div>
       </div>
       <div class="feature-list">
         <article class="feature-row">
           <span class="row-index">01</span>
           <div>
-            <h3>格式、构图和输出都在同一处理流程中</h3>
+            <h3>图片：按上传或分享需要调整</h3>
             <p>选择 HEIC、JPEG、PNG 或 GIF 输出格式，在同一图片处理界面调整像素尺寸或压缩，并直接在画布上裁剪、旋转或选比例。生成后预览实际结果；保存或分享前可核对输出格式、像素尺寸和文件体积，原图保留。</p>
           </div>
         </article>
+        <article class="feature-row">
+          <span class="row-index">02</span>
+          <div>
+            <h3>视频：留下想要的片段</h3>
+            <p>视频选段后可制作 GIF，并调整输出尺寸和帧率；也可制作实况，选择封面帧并在预览中检查，再设置裁剪、画质和声音。另有视频压缩工具。导出不改动原始视频。</p>
+          </div>
+        </article>
       </div>
-      <p>截图交付、视频转实况、用户自备 API Key 的 AI、小组件和小游戏也在应用中提供，见下方功能列表。</p>
+      <p>截图交付、用户自备 API Key 的 AI、小组件和小游戏作为补充功能，见下方列表。</p>
     </section>
 
     <section class="editorial-section" id="features" aria-labelledby="features-title">

@@ -10,13 +10,19 @@
 - Optional AI image generation and editing use a provider, protocol, model, Base URL, and API key configured by the user. Requests go directly from the device to the selected provider; before the first submission, the app shows the receiving host and content for confirmation. Provider charges are separate.
 - [Legacy public TestFlight page (may still refer to version 1.0 (2), not the current build)](https://testflight.apple.com/join/GK8ht2vv). This old link is not a public download link for version 1.2 (5).
 
-## Image workflow
+## Image and video workflows
+
+A photo for upload or sharing may come with requirements for format, aspect ratio, pixel dimensions, or file size. To express or keep a particular moment from a video, select a clip for a GIF or Live Photo; video compression is also available. In both workflows, set the desired output, inspect the actual result, then decide whether to save or share. The source remains unchanged.
 
 ### Format, composition, and output
 
 An image for an upload or share may need a specific format, pixel dimensions, composition, or smaller file size. Convert among HEIC, JPEG, PNG, and GIF, adjust pixel dimensions or compression in the same image workflow, then crop, rotate, or set an aspect ratio on the canvas. Generate, then preview the actual result; before saving or sharing, check the actual output format, pixel dimensions, and file size. The original is preserved.
 
-Screenshot Delivery, video-to-Live-Photo, AI with your own API key, widgets, and games are also available; see the product page’s feature list.
+### Turn a video segment into a GIF or Live Photo
+
+Select a video segment for a GIF and adjust its output dimensions and frame rate. Or create a Live Photo by choosing the exact cover frame, checking it in preview, and setting crop, quality, and sound. Video compression is also available. Generate, then preview the actual result; the source video is preserved.
+
+Screenshot Delivery, AI with your own API key, widgets, and games are additional tools; see the product page’s feature list.
 
 ## Video demonstration
 
