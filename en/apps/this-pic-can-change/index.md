@@ -1,14 +1,14 @@
 # This Pic Can Change
 
-> “This Pic Can Change” is the English-language site name for “这图能改”. The app supports iOS 17 and later and its interface is Simplified Chinese. TestFlight 1.0 (2) external beta review is pending; the public page is not accepting testers yet and will open after Apple Beta Review approval.
+> “This Pic Can Change” is the English-language site name for “这图能改”. The app is designed for iPhone, supports iOS 17 and later, and its interface is Simplified Chinese. iPad can run the compatibility layout; there is no dedicated iPad layout. Version 1.2 (5) is uploaded for internal testing in App Store Connect, is Ready to Test, and is being prepared for App Review; it is not on the App Store.
 
 ## Product facts
 
-- TestFlight 1.0 (2) includes six on-device media tools: video to Live Photo, video compression, video to GIF, image compression, format conversion, and resizing.
-- Screenshot delivery is in development and not included in the current beta. The development feature is planned to join 1–10 screenshots in order, set canvas dimensions, add manual redactions, review on-device OCR candidates, apply a purpose watermark, and export.
-- Home screen features include a photo widget and four games. Photos and game progress are stored in the device’s shared app directory.
-- Optional AI image generation and editing use a provider, protocol, model, Base URL, and API key configured by the user. Requests go from the device to the selected provider; that provider may process the submitted content and charge the user under its own terms.
-- [View TestFlight (review pending)](https://testflight.apple.com/join/GK8ht2vv). The public page is not accepting testers yet; joining opens after Apple Beta Review approval.
+- Version 1.2 (5) includes six core on-device media tools: video to Live Photo, video compression, video to GIF, image compression, format conversion, and resizing. Screenshot Delivery is also included in the current build.
+- The four main tabs, in order, are Workbench, More Features, Recent, and Settings. Home screen features include a photo widget and four games. Photos and game progress are stored in the device’s shared app directory.
+- On-device processing includes 20 successful free uses per week. A one-time, non-consumable lifetime unlock provides unlimited use of all on-device tools.
+- Optional AI image generation and editing use a provider, protocol, model, Base URL, and API key configured by the user. Requests go directly from the device to the selected provider; before the first submission, the app shows the receiving host and content for confirmation. Provider charges are separate.
+- [Legacy public TestFlight page (may still refer to version 1.0 (2), not the current build)](https://testflight.apple.com/join/GK8ht2vv). This old link is not a public download link for version 1.2 (5).
 
 ## Video demonstration
 
