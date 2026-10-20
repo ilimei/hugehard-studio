@@ -18,6 +18,7 @@ BASE = "https://hugehard.app"
 ICON = f"{BASE}/assets/app-icon.png"
 TESTFLIGHT_URL = "https://testflight.apple.com/join/GK8ht2vv"
 TESTFLIGHT_HTML_ROUTES = {
+    "/", "/en/",
     "/apps/this-pic-can-change/", "/en/apps/this-pic-can-change/",
     "/guides/video-to-live-photo/", "/en/guides/video-to-live-photo/",
 }
