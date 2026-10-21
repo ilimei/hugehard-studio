@@ -34,6 +34,9 @@ ROUTES = {
     "/guides/image-compression/": ("guides/image-compression/index.html", "zh-CN"),
     "/guides/video-to-live-photo/": ("guides/video-to-live-photo/index.html", "zh-CN"),
     "/guides/screenshot-delivery/": ("guides/screenshot-delivery/index.html", "zh-CN"),
+    "/guides/video-to-gif/": ("guides/video-to-gif/index.html", "zh-CN"),
+    "/guides/heic-to-jpg/": ("guides/heic-to-jpg/index.html", "zh-CN"),
+    "/guides/compress-video/": ("guides/compress-video/index.html", "zh-CN"),
     "/en/": ("en/index.html", "en"),
     "/en/privacy.html": ("en/privacy.html", "en"),
     "/en/apps/this-pic-can-change/": ("en/apps/this-pic-can-change/index.html", "en"),
@@ -43,6 +46,9 @@ ROUTES = {
     "/en/guides/image-compression/": ("en/guides/image-compression/index.html", "en"),
     "/en/guides/video-to-live-photo/": ("en/guides/video-to-live-photo/index.html", "en"),
     "/en/guides/screenshot-delivery/": ("en/guides/screenshot-delivery/index.html", "en"),
+    "/en/guides/video-to-gif/": ("en/guides/video-to-gif/index.html", "en"),
+    "/en/guides/heic-to-jpg/": ("en/guides/heic-to-jpg/index.html", "en"),
+    "/en/guides/compress-video/": ("en/guides/compress-video/index.html", "en"),
 }
 
 LANGUAGE_PAIRS = (
@@ -55,6 +61,9 @@ LANGUAGE_PAIRS = (
     ("/guides/image-compression/", "/en/guides/image-compression/"),
     ("/guides/video-to-live-photo/", "/en/guides/video-to-live-photo/"),
     ("/guides/screenshot-delivery/", "/en/guides/screenshot-delivery/"),
+    ("/guides/video-to-gif/", "/en/guides/video-to-gif/"),
+    ("/guides/heic-to-jpg/", "/en/guides/heic-to-jpg/"),
+    ("/guides/compress-video/", "/en/guides/compress-video/"),
 )
 
 MARKDOWN_PAGES = {
