@@ -248,3 +248,10 @@ figcaption { margin-top: .75rem; color: var(--muted); font-size: .88rem; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+.featured-on { padding: 2rem 0 1.5rem; border-top: 1px solid var(--line); }
+.featured-on-title { margin: 0 0 .9rem; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.featured-badges { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .75rem 1rem; align-items: center; }
+.featured-badges li { display: flex; }
+.featured-badges a { display: inline-flex; border-radius: .5rem; }
+.featured-badges img { height: 44px; width: auto; max-width: 100%; display: block; }
