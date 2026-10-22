@@ -1,6 +1,6 @@
 # This Pic Can Change
 
-> “This Pic Can Change” is the English-language site name for “这图能改”. The app is designed for iPhone, supports iOS 17 and later, and its interface is Simplified Chinese. iPad can run the compatibility layout; there is no dedicated iPad layout. Version 1.2 (5) and its non-consumable lifetime unlock are submitted for App Review and are Waiting for Review; they are not on the App Store.
+> “This Pic Can Change” is the English-language site name for “这图能改”. The app is designed for iPhone, supports iOS 17 and later, and its interface is Simplified Chinese. iPad can run the compatibility layout; there is no dedicated iPad layout. Version 1.2 (5) is open for public TestFlight testing and can be installed from the invite link; it is not on the App Store.
 
 ## Product facts
 
@@ -8,7 +8,7 @@
 - The four main tabs, in order, are Workbench, More Features, Recent, and Settings. Home screen features include a photo widget and four games. Photos and game progress are stored in the device’s shared app directory.
 - On-device processing includes 20 successful free uses per week. A one-time, non-consumable lifetime unlock provides unlimited use of all on-device tools.
 - Optional AI image generation and editing use a provider, protocol, model, Base URL, and API key configured by the user. Requests go directly from the device to the selected provider; before the first submission, the app shows the receiving host and content for confirmation. Provider charges are separate.
-- [Legacy public TestFlight page (may still refer to version 1.0 (2), not the current build)](https://testflight.apple.com/join/GK8ht2vv). This old link is not a public download link for version 1.2 (5).
+- [Join the public TestFlight beta (version 1.2 (5))](https://testflight.apple.com/join/GK8ht2vv). Install TestFlight on iPhone first.
 
 ## Image and video workflows
 

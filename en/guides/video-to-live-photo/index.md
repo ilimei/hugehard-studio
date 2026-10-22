@@ -1,8 +1,8 @@
 # How to turn an iPhone video into a Live Photo
 
-> On iPhone, open Workbench (“工作台”) in This Pic Can Change (Chinese app name: “这图能改”), choose Photo or Video (“选择照片或视频”), and import a video. In the editor’s bottom mode bar, select Live Photo (“实况”), select up to three seconds, set a cover, quality, and sound, then save the paired result to Photos. Conversion runs on device. The app supports iOS 17 and later and its interface is Simplified Chinese. Version 1.2 (5) and the one-time non-consumable lifetime unlock have been submitted for App Review and are waiting; neither is on the App Store. iPad can run the iPhone compatibility layout.
+> On iPhone, open Workbench (“工作台”) in This Pic Can Change (Chinese app name: “这图能改”), choose Photo or Video (“选择照片或视频”), and import a video. In the editor’s bottom mode bar, select Live Photo (“实况”), select up to three seconds, set a cover, quality, and sound, then save the paired result to Photos. Conversion runs on device. The app supports iOS 17 and later and its interface is Simplified Chinese. The public TestFlight build 1.2 (5) is available to install; it is not on the App Store. iPad can run the iPhone compatibility layout.
 
-[Legacy public TestFlight page (may still refer to version 1.0 (2); not the current build)](https://testflight.apple.com/join/GK8ht2vv). It is not a current download link for version 1.2 (5).
+[Join the public TestFlight beta · 1.2 (5)](https://testflight.apple.com/join/GK8ht2vv)
 
 ## Steps
 
