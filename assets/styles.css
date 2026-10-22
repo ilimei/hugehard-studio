@@ -198,6 +198,14 @@ figcaption { margin-top: .75rem; color: var(--muted); font-size: .88rem; }
 .prose p, .prose li { color: #34332d; }
 .prose ul { padding-left: 1.35rem; }
 .prose li { margin-block: .55rem; }
+
+.badge-list { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.badge-slot { padding: 1.25rem 0; border-top: 1px solid var(--line); }
+.badge-slot:last-child { border-bottom: 1px solid var(--line); }
+.badge-slot h3 { margin-top: 0; margin-bottom: .45rem; }
+.badge-slot > p { margin-bottom: .9rem; color: var(--muted); }
+.badge-embed { display: inline-flex; align-items: center; min-height: 3rem; padding: .85rem 1rem; border: 1px dashed #b9af9d; border-radius: .75rem; background: var(--paper-bright); }
+.badge-placeholder { margin: 0; color: var(--muted); font-size: .92rem; }
 .site-footer { border-top: 1px solid var(--line); }
 .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; padding-block: 1.3rem 2rem; color: var(--muted); font-size: .88rem; }
 .footer-links { display: flex; flex-wrap: wrap; gap: .5rem 1.1rem; }

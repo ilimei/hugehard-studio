@@ -15,6 +15,7 @@ The version 1.2 (5) test build includes six on-device media tools: video to Live
 
 - [工作室首页](https://hugehard.app/)
 - [网站隐私说明](https://hugehard.app/privacy.html)
+- [合作徽章](https://hugehard.app/badges/)
 - [产品介绍：这图能改](https://hugehard.app/apps/this-pic-can-change/)
 - [App 隐私政策](https://hugehard.app/apps/this-pic-can-change/privacy.html)
 - [使用支持](https://hugehard.app/apps/this-pic-can-change/support.html)
@@ -27,6 +28,7 @@ The version 1.2 (5) test build includes six on-device media tools: video to Live
 - [视频压缩指南](https://hugehard.app/guides/compress-video/)
 - [Studio home](https://hugehard.app/en/)
 - [Website privacy notice](https://hugehard.app/en/privacy.html)
+- [Partner badges](https://hugehard.app/en/badges/)
 - [Product overview: This Pic Can Change](https://hugehard.app/en/apps/this-pic-can-change/)
 - [App privacy policy](https://hugehard.app/en/apps/this-pic-can-change/privacy.html)
 - [Product support](https://hugehard.app/en/apps/this-pic-can-change/support.html)

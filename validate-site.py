@@ -27,6 +27,7 @@ TESTFLIGHT_HTML_ROUTES = {
 ROUTES = {
     "/": ("index.html", "zh-CN"),
     "/privacy.html": ("privacy.html", "zh-CN"),
+    "/badges/": ("badges/index.html", "zh-CN"),
     "/apps/this-pic-can-change/": ("apps/this-pic-can-change/index.html", "zh-CN"),
     "/apps/this-pic-can-change/privacy.html": ("apps/this-pic-can-change/privacy.html", "zh-CN"),
     "/apps/this-pic-can-change/support.html": ("apps/this-pic-can-change/support.html", "zh-CN"),
@@ -39,6 +40,7 @@ ROUTES = {
     "/guides/compress-video/": ("guides/compress-video/index.html", "zh-CN"),
     "/en/": ("en/index.html", "en"),
     "/en/privacy.html": ("en/privacy.html", "en"),
+    "/en/badges/": ("en/badges/index.html", "en"),
     "/en/apps/this-pic-can-change/": ("en/apps/this-pic-can-change/index.html", "en"),
     "/en/apps/this-pic-can-change/privacy.html": ("en/apps/this-pic-can-change/privacy.html", "en"),
     "/en/apps/this-pic-can-change/support.html": ("en/apps/this-pic-can-change/support.html", "en"),
@@ -54,6 +56,7 @@ ROUTES = {
 LANGUAGE_PAIRS = (
     ("/", "/en/"),
     ("/privacy.html", "/en/privacy.html"),
+    ("/badges/", "/en/badges/"),
     ("/apps/this-pic-can-change/", "/en/apps/this-pic-can-change/"),
     ("/apps/this-pic-can-change/privacy.html", "/en/apps/this-pic-can-change/privacy.html"),
     ("/apps/this-pic-can-change/support.html", "/en/apps/this-pic-can-change/support.html"),
