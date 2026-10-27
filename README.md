@@ -1,6 +1,6 @@
 # HugeHard Studio 网站
 
-这是 HugeHard Studio 的静态网站源码，使用原生 HTML、CSS 和少量图片资源，无需构建步骤；源码没有植入跟踪脚本。
+这是 HugeHard Studio 的静态网站源码，使用原生 HTML、CSS、共享同意/统计脚本和图片资源，无需构建步骤。网站访问统计只在访客明确同意后加载 Google tag；未选择或拒绝时不向 Google 发送统计请求。
 
 ## 已上线地址与配置
 
@@ -25,7 +25,13 @@ GitHub Pages 操作细节与 DNS 目标可能更新，请以 [发布源设置说
 
 ## 客服邮箱显示
 
-Cloudflare 默认的 Email Address Obfuscation 会在返回的页面中注入邮箱解码脚本。这是邮箱显示保护，不是站点跟踪脚本。`hugehardzhang@gmail.com` 是有意公开的业务联系邮箱，保持当前 Cloudflare 设置即可。
+Cloudflare 默认的 Email Address Obfuscation 会在返回的页面中注入邮箱解码脚本，这是邮箱显示保护，不是 Google Analytics。网站统计由本仓库的 `assets/site-analytics.js` 控制，且只在 apex 域名 `hugehard.app` 上、取得明确同意后启用；`tools.hugehard.app` 不接入该脚本。
+
+## 网站统计与同意
+
+共享脚本只发送一次页面访问，以及访客同意后点击 TestFlight 公测链接时的 `testflight_click` 事件。点击事件字段限于固定入口位置、页面路径与页面语言；查询参数、片段、链接文字、邮箱内容、照片、视频、提示词和 App 使用记录都不会发送。外部来源只保留域名，站内来源只保留路径。GA4 的 Google Signals、广告存储、广告用户数据和广告个性化保持关闭；统计 Cookie 限定在 apex 主机并设置为会话级。拒绝或撤回后停止发送、清除本属性可识别的 GA Cookie。选择保存在当前浏览器，可从所有页面页脚重新更改。
+
+Google Analytics 测量 ID 只在 `assets/site-analytics.js` 的单一配置项维护。GA4 属性中的增强型衡量也必须保持关闭，以免自动收集其他出站点击、搜索或滚动事件。`tools.hugehard.app` 不加载本网站统计脚本，也不共享统计 Cookie。隐私说明需与实际同意流程、事件参数及 Google 数据处理描述保持一致。
 
 ## TestFlight 公开外测状态
 
@@ -71,7 +77,7 @@ python3 validate-site.py
 python3 -m http.server 8000
 ```
 
-然后在浏览器打开 `http://localhost:8000/`。检查中文和 `/en/` 首页、产品页、隐私/支持页、两种语言的指南索引与文章，以及 404 页面；试用键盘 Tab 导航与窄屏视图。再运行 `python3 validate-site.py`。按 Ctrl-C 关闭本地服务器。
+然后在浏览器打开 `http://localhost:8000/`。检查中文和 `/en/` 首页、产品页、隐私/支持页、两种语言的指南索引与文章，以及 404 页面；试用键盘 Tab 导航与窄屏视图。本地预览和非 apex 主机不会加载 Google tag；同意状态与事件使用 Node mock 测试。运行 `node --test tests/site-analytics.test.cjs` 和 `python3 validate-site.py`。按 Ctrl-C 关闭本地服务器。
 
 ## 页面与资源
 
@@ -84,5 +90,7 @@ python3 -m http.server 8000
 - `privacy.html`：本网站的数据处理，以及 Cloudflare 代理和 GitHub Pages 托管日志。
 - `404.html`：站内未找到页面时显示。
 - `assets/styles.css`：共享样式。
-- `validate-site.py`：站点路由、SEO 元数据和结构化数据检查。
+- `assets/site-analytics.js`：共享 GA4 同意界面、统计载入和 TestFlight 点击事件。
+- `tests/site-analytics.test.cjs`：用 stub 检查同意、拒绝、撤回、页面访问与点击事件，不连接 Google。
+- `validate-site.py`：站点路由、SEO 元数据、analytics hooks 和结构化数据检查。
 - `robots.txt`、`sitemap.xml`、`favicon.svg`、`.nojekyll`、`CNAME`：发布元数据与站点图标。

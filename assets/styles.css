@@ -210,6 +210,50 @@ figcaption { margin-top: .75rem; color: var(--muted); font-size: .88rem; }
 .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; padding-block: 1.3rem 2rem; color: var(--muted); font-size: .88rem; }
 .footer-links { display: flex; flex-wrap: wrap; gap: .5rem 1.1rem; }
 .footer-links a { color: var(--ink); }
+.footer-links .site-analytics-settings {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .2em;
+  cursor: pointer;
+}
+.site-analytics-consent[hidden] { display: none; }
+.site-analytics-consent {
+  position: fixed;
+  z-index: 100;
+  right: 1rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom));
+  width: min(38rem, calc(100vw - 2rem));
+  max-height: calc(100vh - 2rem);
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  padding: 1.15rem 1.25rem;
+  border: 1px solid var(--line);
+  background: var(--paper-bright);
+  box-shadow: 0 .5rem 2rem rgb(37 37 31 / 18%);
+}
+.site-analytics-consent h2 { margin-bottom: .45rem; font-size: 1.15rem; }
+.site-analytics-consent p { margin-bottom: .9rem; color: var(--muted); font-size: .93rem; }
+.site-analytics-actions { display: flex; flex-wrap: wrap; gap: .65rem; }
+.site-analytics-actions button {
+  min-height: 2.75rem;
+  padding: .5rem .85rem;
+  border: 1px solid var(--accent-dark);
+  font: inherit;
+  font-size: .92rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+.site-analytics-accept { background: var(--accent-dark); color: #fffdf8; }
+.site-analytics-reject { background: transparent; color: var(--accent-dark); }
+.site-analytics-actions button:hover { border-color: var(--olive); }
+.site-analytics-accept:hover { background: var(--olive); }
+.site-analytics-reject:hover { background: var(--paper); }
 .footer-brand { font-weight: 700; color: var(--ink); }
 .error-code { display: block; margin-bottom: .3rem; color: var(--accent); font-family: Georgia, serif; font-size: clamp(5rem, 18vw, 11rem); line-height: .9; letter-spacing: -.08em; }
 

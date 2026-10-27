@@ -17,11 +17,15 @@ ROOT = Path(__file__).resolve().parent
 BASE = "https://hugehard.app"
 ICON = f"{BASE}/assets/app-icon.png"
 TESTFLIGHT_URL = "https://testflight.apple.com/join/GK8ht2vv"
-TESTFLIGHT_HTML_ROUTES = {
-    "/", "/en/",
-    "/apps/this-pic-can-change/", "/en/apps/this-pic-can-change/",
-    "/guides/video-to-live-photo/", "/en/guides/video-to-live-photo/",
+TESTFLIGHT_HTML_PLACEMENTS = {
+    "/": "home_hero",
+    "/en/": "home_hero",
+    "/apps/this-pic-can-change/": "product_hero",
+    "/en/apps/this-pic-can-change/": "product_hero",
+    "/guides/video-to-live-photo/": "live_photo_guide",
+    "/en/guides/video-to-live-photo/": "live_photo_guide",
 }
+ANALYTICS_SCRIPT = "/assets/site-analytics.js"
 
 # Canonical URL -> (file in this repository, document language)
 ROUTES = {
@@ -97,6 +101,8 @@ class PageParser(HTMLParser):
         self.describedby: list[str] = []
         self.markdown_alternates: list[str] = []
         self.hrefs: list[str] = []
+        self.script_srcs: list[str] = []
+        self.analytics_ctas: list[tuple[str, str]] = []
         self.language_links: list[str] = []
         self.resources: list[str] = []
         self.videos: list[dict[str, str | None]] = []
@@ -148,7 +154,10 @@ class PageParser(HTMLParser):
                 if rels.intersection({"stylesheet", "icon"}):
                     self.resources.append(href)
         if tag == "a" and values.get("href"):
-            self.hrefs.append(values["href"] or "")
+            href = values["href"] or ""
+            self.hrefs.append(href)
+            if "data-ga4-placement" in values:
+                self.analytics_ctas.append((href, values.get("data-ga4-placement") or ""))
             if "language-link" in (values.get("class") or "").split():
                 self.language_links.append(values["href"] or "")
         if tag == "img" and values.get("src"):
@@ -164,9 +173,14 @@ class PageParser(HTMLParser):
             self.video_sources.append(source)
             self.video_source_types.append(values.get("type", "") or "")
             self.resources.append(source)
-        if tag == "script" and values.get("type", "").lower() == "application/ld+json":
-            self.current_script_is_jsonld = True
-            self.current_jsonld_parts = []
+        if tag == "script":
+            if values.get("src"):
+                script_src = values["src"] or ""
+                self.script_srcs.append(script_src)
+                self.resources.append(script_src)
+            if values.get("type", "").lower() == "application/ld+json":
+                self.current_script_is_jsonld = True
+                self.current_jsonld_parts = []
 
     def handle_endtag(self, tag: str) -> None:
         if tag == "title":
@@ -317,6 +331,8 @@ def main() -> int:
             fail(errors, f"Expected Twitter summary card on {route}")
         if len(parser.canonicals) != 1 or parser.canonicals[0] != f"{BASE}{route}":
             fail(errors, f"Canonical must be self-referencing for {route}")
+        if parser.script_srcs.count(ANALYTICS_SCRIPT) != 1:
+            fail(errors, f"Expected one shared site analytics/consent script on {route}")
         expected_describedby = ["/llms.txt"] if route in LLMS_DESCRIBED_ROUTES else []
         if parser.describedby != expected_describedby:
             fail(errors, f"Unexpected describedby target on {route}: {parser.describedby}")
@@ -331,8 +347,17 @@ def main() -> int:
             parsed_ref = urlparse(ref)
             if not parsed_ref.scheme and not parsed_ref.netloc and Path(parsed_ref.path).name == "index.html":
                 fail(errors, f"Internal link uses non-canonical index.html on {route}: {ref}")
-        if route in TESTFLIGHT_HTML_ROUTES and parser.hrefs.count(TESTFLIGHT_URL) != 1:
+        expected_analytics_ctas = (
+            [(TESTFLIGHT_URL, TESTFLIGHT_HTML_PLACEMENTS[route])]
+            if route in TESTFLIGHT_HTML_PLACEMENTS
+            else []
+        )
+        if parser.analytics_ctas != expected_analytics_ctas:
+            fail(errors, f"TestFlight analytics placements do not match the approved route map on {route}")
+        if route in TESTFLIGHT_HTML_PLACEMENTS and parser.hrefs.count(TESTFLIGHT_URL) != 1:
             fail(errors, f"Expected one verified TestFlight link on {route}")
+        if route not in TESTFLIGHT_HTML_PLACEMENTS and TESTFLIGHT_URL in parser.hrefs:
+            fail(errors, f"Unexpected TestFlight link outside its approved route on {route}")
 
     # Parse all HTML first so internal fragment checks can resolve every page.
     for file in ROOT.rglob("*.html"):
@@ -381,6 +406,8 @@ def main() -> int:
         fail(errors, "404.html must not declare a canonical")
     if not_found.meta.get("robots", [""])[0].replace(" ", "").lower() != "noindex,follow":
         fail(errors, "404.html must declare noindex,follow")
+    if not_found.script_srcs:
+        fail(errors, "404.html must not load analytics or transmit arbitrary request paths")
     for ref in not_found.hrefs + not_found.resources:
         parsed_ref = urlparse(ref)
         if parsed_ref.path and not parsed_ref.scheme and not parsed_ref.netloc and not ref.startswith("/"):
@@ -404,6 +431,15 @@ def main() -> int:
     robots = (ROOT / "robots.txt").read_text(encoding="utf-8")
     if "Allow: /" not in robots or f"Sitemap: {BASE}/sitemap.xml" not in robots:
         fail(errors, "robots.txt must allow crawling and advertise sitemap.xml")
+
+    analytics_source = ROOT / ANALYTICS_SCRIPT.lstrip("/")
+    if not analytics_source.is_file():
+        fail(errors, "Missing the shared analytics/consent script")
+    else:
+        source = analytics_source.read_text(encoding="utf-8")
+        measurement_ids = re.findall(r'measurementId:\s*"(G-[A-Z0-9]+)"', source)
+        if len(measurement_ids) != 1:
+            fail(errors, "The shared analytics script must have exactly one valid GA4 Measurement ID config")
 
     # llms.txt is an optional Markdown index, separate from the search sitemap.
     llms_file = ROOT / "llms.txt"
