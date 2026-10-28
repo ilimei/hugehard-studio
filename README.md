@@ -41,7 +41,7 @@ Google Analytics 测量 ID 只在 `assets/site-analytics.js` 的单一配置项�
 
 ## SEO 与语言版本维护
 
-本轮曝光优先围绕 iPhone 视频转 Live Photo / 视频转实况照片，入口统一指向现有规范指南 `/guides/video-to-live-photo/` 与英文镜像 `/en/guides/video-to-live-photo/`，不另建重复关键词页。TestFlight 入口指向当前公开版 1.2 (5)；不得把它描述为 App Store 下载。
+2026 年 10 月 28 日 SEO 更新根据 GSC 查询补强已有的 iPhone video-to-GIF 与 4K video compression 指南，同时维护图片格式转换、裁剪及视频实况流程的产品内链。补充具体操作、已核验限制和明确标注的单次示例；不把单个示例结果写成普遍保证，也不为关键词新建薄内容页。TestFlight 入口仍指向公开版 1.2 (5)，不得描述为 App Store 下载。
 
 网站提供简体中文和英文两套页面。新增或修改成对页面时，按相同内容路径互链：中文在 `/` 与 `/apps/...`，英文在 `/en/` 与 `/en/apps/...`；教程对应放在 `/guides/` 和 `/en/guides/`。
 
@@ -84,9 +84,10 @@ python3 -m http.server 8000
 - `index.html`：工作室首页。
 - `apps/this-pic-can-change/`：产品介绍、隐私政策和使用支持。
 - `en/` 与 `en/apps/this-pic-can-change/`：English 网站、产品、隐私与支持镜像。
-- `guides/`、`en/guides/`：中英指南索引及图片压缩、视频转实况、截图交付教程。
+- `guides/`、`en/guides/`：中英六篇指南，覆盖图片压缩、HEIC 转 JPG、视频转 GIF、视频压缩、视频转实况和截图交付。
 - `llms.txt` 与四份 `index.md`：中英产品和视频转实况页面的精简机器可读资料。
 - `assets/video-to-live-photo-demo.mp4`：视频转实况指南引用的本地录屏素材。
+- `apps/this-pic-can-change/assets/video-compression-settings-v12.png` 与 `video-compression-result-v12-07.png`：视频压缩教程使用的真实设置和结果截图示例。
 - `privacy.html`：本网站的数据处理，以及 Cloudflare 代理和 GitHub Pages 托管日志。
 - `404.html`：站内未找到页面时显示。
 - `assets/styles.css`：共享样式。
