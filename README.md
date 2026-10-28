@@ -84,10 +84,11 @@ python3 -m http.server 8000
 - `index.html`：工作室首页。
 - `apps/this-pic-can-change/`：产品介绍、隐私政策和使用支持。
 - `en/` 与 `en/apps/this-pic-can-change/`：English 网站、产品、隐私与支持镜像。
-- `guides/`、`en/guides/`：中英六篇指南，覆盖图片压缩、HEIC 转 JPG、视频转 GIF、视频压缩、视频转实况和截图交付。
+- `guides/`、`en/guides/`：中英七篇指南，覆盖照片裁剪/旋转、图片压缩、HEIC 转 JPG、视频转 GIF、视频压缩、视频转实况和截图交付。
 - `llms.txt` 与四份 `index.md`：中英产品和视频转实况页面的精简机器可读资料。
 - `assets/video-to-live-photo-demo.mp4`：视频转实况指南引用的本地录屏素材。
 - `apps/this-pic-can-change/assets/video-compression-settings-v12.png` 与 `video-compression-result-v12-07.png`：视频压缩教程使用的真实设置和结果截图示例。
+- `apps/this-pic-can-change/assets/image-crop-canvas-v12-ipad.jpg`：照片裁剪指南使用的 v1.2 开发期间 iPad 模拟器界面示例；照片与数值仅用于说明界面。
 - `privacy.html`：本网站的数据处理，以及 Cloudflare 代理和 GitHub Pages 托管日志。
 - `404.html`：站内未找到页面时显示。
 - `assets/styles.css`：共享样式。
