@@ -89,6 +89,7 @@ python3 -m http.server 8000
 - `assets/video-to-live-photo-demo.mp4`：视频转实况指南引用的本地录屏素材。
 - `apps/this-pic-can-change/assets/video-compression-settings-v12.png` 与 `video-compression-result-v12-07.png`：视频压缩教程使用的真实设置和结果截图示例。
 - `apps/this-pic-can-change/assets/image-crop-canvas-v12-ipad.jpg`：照片裁剪指南使用的 v1.2 开发期间 iPad 模拟器界面示例；照片与数值仅用于说明界面。
+- `apps/this-pic-can-change/assets/image-compression-200kb-example/`：200KB 指南案例的公开工作台截图源图与三份真实导出结果；2026 年 10 月 29 日使用 App 图像处理代码在 macOS 单次导出，非 iPhone 或 TestFlight 版实测。
 - `privacy.html`：本网站的数据处理，以及 Cloudflare 代理和 GitHub Pages 托管日志。
 - `404.html`：站内未找到页面时显示。
 - `assets/styles.css`：共享样式。
