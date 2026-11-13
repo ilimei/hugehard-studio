@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f4f0e7">
-  <meta name="description" content="iPhone photos are saved as HEIC by default. When a website or computer can&#x27;t open them, convert them to JPG on the phone with This Pic Can Change, on device, keeping the original.">
+  <meta name="description" content="Convert an iPhone HEIC photo to JPG. Learn why file size may change, why transparent PNG areas turn white, and how to choose a format for an upload.">
   <link rel="canonical" href="https://hugehard.app/en/guides/heic-to-jpg/">
   <link rel="alternate" hreflang="zh-Hans" href="https://hugehard.app/guides/heic-to-jpg/">
   <link rel="alternate" hreflang="en" href="https://hugehard.app/en/guides/heic-to-jpg/">
@@ -13,15 +13,15 @@
   <meta property="og:site_name" content="HugeHard Studio">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="How to convert iPhone HEIC photos to JPG | This Pic Can Change">
-  <meta property="og:description" content="iPhone photos are saved as HEIC by default. When a website or computer can&#x27;t open them, convert them to JPG on the phone with This Pic Can Change, on device, keeping the original.">
+  <meta property="og:description" content="Convert an iPhone HEIC photo to JPG. Learn why file size may change, why transparent PNG areas turn white, and how to choose a format for an upload.">
   <meta property="og:url" content="https://hugehard.app/en/guides/heic-to-jpg/">
   <meta property="og:image" content="https://hugehard.app/assets/app-icon.png">
   <meta property="og:image:alt" content="This Pic Can Change app icon">
   <meta property="article:published_time" content="2026-10-21">
-  <meta property="article:modified_time" content="2026-10-22">
+  <meta property="article:modified_time" content="2026-11-13">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="How to convert iPhone HEIC photos to JPG | This Pic Can Change">
-  <meta name="twitter:description" content="iPhone photos are saved as HEIC by default. When a website or computer can&#x27;t open them, convert them to JPG on the phone with This Pic Can Change, on device, keeping the original.">
+  <meta name="twitter:description" content="Convert an iPhone HEIC photo to JPG. Learn why file size may change, why transparent PNG areas turn white, and how to choose a format for an upload.">
   <meta name="twitter:image" content="https://hugehard.app/assets/app-icon.png">
   <meta name="twitter:image:alt" content="This Pic Can Change app icon">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -34,10 +34,10 @@
     {
       "@type": "Article",
       "headline": "How to convert an iPhone HEIC photo to JPG",
-      "description": "iPhone photos are saved as HEIC by default. When a website or computer can't open them, convert them to JPG on the phone with This Pic Can Change, on device, keeping the original.",
+      "description": "Convert an iPhone HEIC photo to JPG. Learn why file size may change, why transparent PNG areas turn white, and how to choose a format for an upload.",
       "image": "https://hugehard.app/assets/app-icon.png",
       "datePublished": "2026-10-21",
-      "dateModified": "2026-10-22",
+      "dateModified": "2026-11-13",
       "author": {
         "@type": "Organization",
         "name": "HugeHard Studio",
@@ -82,18 +82,34 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Does HEIC to JPG lose quality?",
+          "name": "Why can an HEIC-to-JPG file be larger?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "It re-encodes once, which is hard to notice at normal quality. If you also set a small target file size, the app lowers encoding quality to fit, and the loss becomes more visible. Judge by the preview."
+            "text": "HEIC to JPEG re-encodes the image. The output size depends on image content, pixel dimensions, and encoding settings, so it may be larger or smaller. HEIF is generally more storage-efficient than JPEG, but that does not predict the size of a particular conversion. Check the generated result; if it is still over a limit, set a file-size target and generate again."
           }
         },
         {
           "@type": "Question",
-          "name": "Can I convert to PNG instead?",
+          "name": "Why does a transparent PNG turn white when converted to JPG?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Output formats are HEIC, JPEG, PNG, and GIF. PNG is lossless and usually much larger than JPEG, so JPEG is the usual choice when size matters."
+            "text": "JPEG does not support transparency. When This Pic Can Change converts a PNG to JPEG, it fills transparent areas with white. If you need transparency and the receiver accepts PNG, choose PNG output."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can HEIC-to-JPG conversion change the image?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HEIC to JPEG re-encodes the image, so the result can differ from the source. With a file-size limit enabled, the app searches encoding quality to try to meet the target. The result depends on the source and settings, so check the preview after generating."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert to PNG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Output formats include HEIC, JPEG, PNG, and GIF. PNG uses lossless encoding and can preserve transparency in the source, but file size still depends on image content and pixel dimensions. Check that the receiver accepts the format you choose."
           }
         },
         {
@@ -106,10 +122,10 @@
         },
         {
           "@type": "Question",
-          "name": "What does it cost?",
+          "name": "Where can I check the current experience entry and pricing?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The free tier gives 20 successful on-device uses per week, reset Monday 00:00 local time; importing, previewing, failures, and cancellations do not count. The lifetime unlock is a one-time purchase planned at CNY 1, not a subscription. Version 1.2 (5) is available through public TestFlight testing; it is not on the App Store yet. The final price is whatever the App Store shows."
+            "text": "See the product overview for the current experience entry. If the app shows purchase options or a price, use the app's current display."
           }
         }
       ]
@@ -135,41 +151,66 @@
       <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/en/">Home</a></li><li><a href="/en/guides/">Guides</a></li><li aria-current="page">HEIC to JPG</li></ol></nav>
       <p class="eyebrow">Image processing</p>
       <h1>How to convert an iPhone HEIC photo to JPG</h1>
-      <p class="article-meta">Written and maintained by HugeHard Studio · Updated 22 October 2026</p>
-      <p class="lead">iPhone saves photos as HEIC by default. The files are small, but plenty of upload forms and older computers can't read them. Import the photo into This Pic Can Change, pick JPEG as the output format, check the format and file size, then save. Conversion runs on the phone and the original is kept.</p>
+      <p class="article-meta">Written and maintained by HugeHard Studio · Updated 13 November 2026 · Samples exported with the app’s image-processing code on macOS on 13 November; not an iPhone device test, values apply to the listed inputs</p>
+      <p class="lead">If a receiver requires JPG/JPEG, import the HEIC photo into This Pic Can Change, choose JPEG under Format (“格式”), then generate and inspect the result. Conversion runs on device and preserves the original; file size may change with the image and encoding settings.</p>
 
       <h2>Steps</h2>
       <ol class="guide-steps">
         <li>On the Workspace tab, import the photo. HEIC works, and so do PNG, GIF, and other readable formats.</li>
         <li>Switch to Format at the bottom of the image editor and choose JPEG.</li>
-        <li>If the site has size or dimension rules, switch to Adjust and change the long edge under Pixel Size, or set a target under File Size.</li>
+        <li>If the receiver has pixel or file-size limits, switch to Adjust (“调整”) and change the long edge under Pixel Size (“像素尺寸”), or set a target under File Size (“文件大小”). HEIC-to-JPEG conversion re-encodes the image, so the file may grow or shrink. If it misses the size target, read the result notice and adjust the long edge as needed. See the <a href="/en/guides/image-compression/">image compression guide</a>.</li>
         <li>Generate, then check output format, pixel dimensions, and file size on the result screen.</li>
         <li>Save to the photo library or share. The original HEIC is not overwritten.</li>
       </ol>
 
+      <h2>Choose a format for the receiver</h2>
+      <ul>
+        <li><strong>If HEIC is accepted:</strong> you can keep the original and avoid an unnecessary conversion. Apple describes HEIF as more storage-efficient than JPEG in supported workflows; that does not predict the size of a particular image conversion. <a href="https://support.apple.com/en-us/116944">Read Apple’s HEIF/HEVC guide</a>.</li>
+        <li><strong>If JPG/JPEG is required:</strong> choose JPEG. Conversion re-encodes the image, and the resulting file size depends on the content, pixel dimensions, and encoding settings.</li>
+        <li><strong>If transparency is needed:</strong> choose PNG if the receiver accepts it. JPEG has no transparency, so transparent areas are filled with white.</li>
+      </ul>
+
+      <h2>One conversion example</h2>
+      <p>The source is a public product-page Workbench interface screenshot in JPEG (1206 × 2622 px, 339,781 bytes). It contains a waterfall preview; it is not the original waterfall photo: <a href="/apps/this-pic-can-change/assets/v12-04-workbench.jpeg">open the source screenshot</a>.</p>
+      <ul>
+        <li><strong>Intermediate HEIC:</strong> exported from that screenshot at 1206 × 2622 px, 324,031 bytes. <a href="/apps/this-pic-can-change/assets/heic-to-jpg-samples/workbench-heic-sample.heic" download="workbench-heic-sample.heic">Download the HEIC sample</a>.</li>
+        <li><strong>JPEG converted from that HEIC:</strong> 1206 × 2622 px, 336,146 bytes; no file-size limit was set. In this sample, the JPEG is larger than its HEIC input. <a href="/apps/this-pic-can-change/assets/heic-to-jpg-samples/workbench-from-heic-sample.jpg" download="workbench-from-heic-sample.jpg">Download JPEG converted from HEIC</a>.</li>
+        <li><strong>Transparent PNG test fixture:</strong> 256 × 256 px, 1,661 bytes, containing transparent areas. <a href="/apps/this-pic-can-change/assets/heic-to-jpg-samples/transparent-png-fixture.png" download="transparent-png-fixture.png">Download the PNG sample</a>.</li>
+        <li><strong>JPEG converted from that PNG:</strong> 256 × 256 px, 1,897 bytes, with no transparency; a pixel in the originally transparent corner is white. <a href="/apps/this-pic-can-change/assets/heic-to-jpg-samples/transparent-png-to-jpeg-sample.jpg" download="transparent-png-to-jpeg-sample.jpg">Download the white-background JPEG</a>.</li>
+      </ul>
+      <p>Browser preview support for HEIC varies, so download that file to inspect it.</p>
+
       <aside class="guide-callout">
-        <p><strong>Before converting to JPG</strong></p>
-        <p>JPEG has no transparency, so transparent areas become white. Converting HEIC to JPEG re-encodes the image and the file usually gets somewhat larger. The current version does not guarantee HDR highlights and color are preserved.</p>
+        <p><strong>HDR photos</strong></p>
+        <p>If the source is HDR, compare highlights and color with the original after generating. This Pic Can Change does not guarantee that HDR highlights and color are preserved.</p>
       </aside>
 
       <section aria-labelledby="faq-title">
         <h2 id="faq-title">FAQ</h2>
         <div class="faq-list">
           <div class="faq-item">
-            <h3>Does HEIC to JPG lose quality?</h3>
-            <p>It re-encodes once, which is hard to notice at normal quality. If you also set a small target file size, the app lowers encoding quality to fit, and the loss becomes more visible. Judge by the preview.</p>
+            <h3>Why can an HEIC-to-JPG file be larger?</h3>
+            <p>HEIC to JPEG re-encodes the image. The output size depends on image content, pixel dimensions, and encoding settings, so it may be larger or smaller. HEIF is generally more storage-efficient than JPEG, but that does not predict the size of a particular conversion. Check the generated result; if it is still over a limit, set a target under Adjust (“调整”) → File Size (“文件大小”) and generate again.</p>
           </div>
           <div class="faq-item">
-            <h3>Can I convert to PNG instead?</h3>
-            <p>Yes. Output formats are HEIC, JPEG, PNG, and GIF. PNG is lossless and usually much larger than JPEG, so JPEG is the usual choice when size matters.</p>
+            <h3>Why does a transparent PNG turn white when converted to JPG?</h3>
+            <p>JPEG does not support transparency. When This Pic Can Change converts a PNG to JPEG, it fills transparent areas with white. If you need transparency and the receiver accepts PNG, choose PNG output.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can HEIC-to-JPG conversion change the image?</h3>
+            <p>HEIC to JPEG re-encodes the image, so the result can differ from the source. With a file-size limit enabled, the app searches encoding quality to try to meet the target. The result depends on the source and settings, so check the preview after generating.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I convert to PNG?</h3>
+            <p>Yes. Output formats include HEIC, JPEG, PNG, and GIF. PNG uses lossless encoding and can preserve transparency in the source, but file size still depends on image content and pixel dimensions. Check that the receiver accepts the format you choose.</p>
           </div>
           <div class="faq-item">
             <h3>Are photos uploaded?</h3>
             <p>No. Format conversion runs on the device and nothing is uploaded to the developer's servers.</p>
           </div>
           <div class="faq-item">
-            <h3>What does it cost?</h3>
-            <p>The free tier gives 20 successful on-device uses per week, reset Monday 00:00 local time; importing, previewing, failures, and cancellations do not count. The lifetime unlock is a one-time purchase planned at CNY 1, not a subscription. Version 1.2 (5) is available through public TestFlight testing; it is not on the App Store yet. The final price is whatever the App Store shows.</p>
+            <h3>Where can I check the current experience entry and pricing?</h3>
+            <p>See the <a href="/en/apps/this-pic-can-change/">product overview</a> for the current experience entry. If the app shows purchase options or a price, use the app’s current display.</p>
           </div>
         </div>
       </section>
