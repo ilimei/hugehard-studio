@@ -43,6 +43,7 @@ ROUTES = {
     "/guides/video-to-gif/": ("guides/video-to-gif/index.html", "zh-CN"),
     "/guides/heic-to-jpg/": ("guides/heic-to-jpg/index.html", "zh-CN"),
     "/guides/compress-video/": ("guides/compress-video/index.html", "zh-CN"),
+    "/guides/live-photo-not-moving/": ("guides/live-photo-not-moving/index.html", "zh-CN"),
     "/en/": ("en/index.html", "en"),
     "/en/privacy.html": ("en/privacy.html", "en"),
     "/en/badges/": ("en/badges/index.html", "en"),
@@ -57,6 +58,7 @@ ROUTES = {
     "/en/guides/video-to-gif/": ("en/guides/video-to-gif/index.html", "en"),
     "/en/guides/heic-to-jpg/": ("en/guides/heic-to-jpg/index.html", "en"),
     "/en/guides/compress-video/": ("en/guides/compress-video/index.html", "en"),
+    "/en/guides/live-photo-not-moving/": ("en/guides/live-photo-not-moving/index.html", "en"),
 }
 
 LANGUAGE_PAIRS = (
@@ -74,6 +76,7 @@ LANGUAGE_PAIRS = (
     ("/guides/video-to-gif/", "/en/guides/video-to-gif/"),
     ("/guides/heic-to-jpg/", "/en/guides/heic-to-jpg/"),
     ("/guides/compress-video/", "/en/guides/compress-video/"),
+    ("/guides/live-photo-not-moving/", "/en/guides/live-photo-not-moving/"),
 )
 
 MARKDOWN_PAGES = {
