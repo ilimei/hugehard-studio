@@ -29,6 +29,7 @@ The public TestFlight build 1.2 (5) includes six on-device media tools: video to
 - [视频压缩指南](https://hugehard.app/guides/compress-video/)
 - [实况照片不动排查指南](https://hugehard.app/guides/live-photo-not-moving/)
 - [视频转实况画质选择指南](https://hugehard.app/guides/live-photo-quality/)
+- [视频做成小红书实况图指南](https://hugehard.app/guides/live-photo-xiaohongshu/)
 - [Studio home](https://hugehard.app/en/)
 - [Website privacy notice](https://hugehard.app/en/privacy.html)
 - [Partner badges](https://hugehard.app/en/badges/)
@@ -45,3 +46,4 @@ The public TestFlight build 1.2 (5) includes six on-device media tools: video to
 - [Video compression guide](https://hugehard.app/en/guides/compress-video/)
 - [Live Photo not moving troubleshooting guide](https://hugehard.app/en/guides/live-photo-not-moving/)
 - [Choosing Live Photo quality guide](https://hugehard.app/en/guides/live-photo-quality/)
+- [Live Photos for Xiaohongshu guide](https://hugehard.app/en/guides/live-photo-xiaohongshu/)
