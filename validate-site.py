@@ -63,6 +63,8 @@ ROUTES = {
     "/en/guides/live-photo-not-moving/": ("en/guides/live-photo-not-moving/index.html", "en"),
     "/en/guides/live-photo-quality/": ("en/guides/live-photo-quality/index.html", "en"),
     "/en/guides/live-photo-xiaohongshu/": ("en/guides/live-photo-xiaohongshu/index.html", "en"),
+    "/guides/live-photo-lock-screen-wallpaper/": ("guides/live-photo-lock-screen-wallpaper/index.html", "zh-CN"),
+    "/en/guides/live-photo-lock-screen-wallpaper/": ("en/guides/live-photo-lock-screen-wallpaper/index.html", "en"),
 }
 
 LANGUAGE_PAIRS = (
@@ -83,6 +85,7 @@ LANGUAGE_PAIRS = (
     ("/guides/live-photo-not-moving/", "/en/guides/live-photo-not-moving/"),
     ("/guides/live-photo-quality/", "/en/guides/live-photo-quality/"),
     ("/guides/live-photo-xiaohongshu/", "/en/guides/live-photo-xiaohongshu/"),
+    ("/guides/live-photo-lock-screen-wallpaper/", "/en/guides/live-photo-lock-screen-wallpaper/"),
 )
 
 MARKDOWN_PAGES = {
