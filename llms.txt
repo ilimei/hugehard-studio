@@ -51,3 +51,5 @@ The public TestFlight build 1.2 (5) includes six on-device media tools: video to
 - [Live Photo Lock Screen wallpaper guide](https://hugehard.app/en/guides/live-photo-lock-screen-wallpaper/)
 - [视频做成实况照片发朋友圈指南](https://hugehard.app/guides/live-photo-wechat/)
 - [Live Photos for WeChat guide](https://hugehard.app/en/guides/live-photo-wechat/)
+- [实况照片声音设置指南](https://hugehard.app/guides/live-photo-sound/)
+- [Live Photo sound settings guide](https://hugehard.app/en/guides/live-photo-sound/)
