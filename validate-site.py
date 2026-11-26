@@ -69,6 +69,8 @@ ROUTES = {
     "/en/guides/live-photo-wechat/": ("en/guides/live-photo-wechat/index.html", "en"),
     "/guides/live-photo-sound/": ("guides/live-photo-sound/index.html", "zh-CN"),
     "/en/guides/live-photo-sound/": ("en/guides/live-photo-sound/index.html", "en"),
+    "/guides/live-photo-3-seconds/": ("guides/live-photo-3-seconds/index.html", "zh-CN"),
+    "/en/guides/live-photo-3-seconds/": ("en/guides/live-photo-3-seconds/index.html", "en"),
 }
 
 LANGUAGE_PAIRS = (
@@ -92,6 +94,7 @@ LANGUAGE_PAIRS = (
     ("/guides/live-photo-lock-screen-wallpaper/", "/en/guides/live-photo-lock-screen-wallpaper/"),
     ("/guides/live-photo-wechat/", "/en/guides/live-photo-wechat/"),
     ("/guides/live-photo-sound/", "/en/guides/live-photo-sound/"),
+    ("/guides/live-photo-3-seconds/", "/en/guides/live-photo-3-seconds/"),
 )
 
 MARKDOWN_PAGES = {

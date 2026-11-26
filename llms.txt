@@ -53,3 +53,5 @@ The public TestFlight build 1.2 (5) includes six on-device media tools: video to
 - [Live Photos for WeChat guide](https://hugehard.app/en/guides/live-photo-wechat/)
 - [实况照片声音设置指南](https://hugehard.app/guides/live-photo-sound/)
 - [Live Photo sound settings guide](https://hugehard.app/en/guides/live-photo-sound/)
+- [视频转实况为什么最长 3 秒指南](https://hugehard.app/guides/live-photo-3-seconds/)
+- [Why a Live Photo clip is only three seconds guide](https://hugehard.app/en/guides/live-photo-3-seconds/)
