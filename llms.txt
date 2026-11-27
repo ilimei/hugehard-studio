@@ -55,3 +55,5 @@ The public TestFlight build 1.2 (5) includes six on-device media tools: video to
 - [Live Photo sound settings guide](https://hugehard.app/en/guides/live-photo-sound/)
 - [视频转实况为什么最长 3 秒指南](https://hugehard.app/guides/live-photo-3-seconds/)
 - [Why a Live Photo clip is only three seconds guide](https://hugehard.app/en/guides/live-photo-3-seconds/)
+- [视频转实况怎么选封面指南](https://hugehard.app/guides/live-photo-cover/)
+- [How to choose a Live Photo cover guide](https://hugehard.app/en/guides/live-photo-cover/)

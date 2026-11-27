@@ -71,6 +71,8 @@ ROUTES = {
     "/en/guides/live-photo-sound/": ("en/guides/live-photo-sound/index.html", "en"),
     "/guides/live-photo-3-seconds/": ("guides/live-photo-3-seconds/index.html", "zh-CN"),
     "/en/guides/live-photo-3-seconds/": ("en/guides/live-photo-3-seconds/index.html", "en"),
+    "/guides/live-photo-cover/": ("guides/live-photo-cover/index.html", "zh-CN"),
+    "/en/guides/live-photo-cover/": ("en/guides/live-photo-cover/index.html", "en"),
 }
 
 LANGUAGE_PAIRS = (
@@ -95,6 +97,7 @@ LANGUAGE_PAIRS = (
     ("/guides/live-photo-wechat/", "/en/guides/live-photo-wechat/"),
     ("/guides/live-photo-sound/", "/en/guides/live-photo-sound/"),
     ("/guides/live-photo-3-seconds/", "/en/guides/live-photo-3-seconds/"),
+    ("/guides/live-photo-cover/", "/en/guides/live-photo-cover/"),
 )
 
 MARKDOWN_PAGES = {
